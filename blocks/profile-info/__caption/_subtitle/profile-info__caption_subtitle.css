@@ -9,3 +9,25 @@
   line-height: 22px;
   color: #FFFFFF;
 }
+
+@media (max-width: 1280px), (min-width: 1281px) {
+  .profile-info__caption_title {
+  }
+}
+
+@media (max-width: 900px) {
+  .profile-info__caption_title {
+    font-size: 14px;
+    line-height: 18px;
+    }
+}
+
+@media (max-width: 585px) {
+  .profile-info__caption_title {
+  }
+}
+
+@media (max-width: 690px) {
+  .profile-info__caption_title {
+  }
+}
