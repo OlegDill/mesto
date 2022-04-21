@@ -1,0 +1,7 @@
+.elements {
+  display: grid;
+  margin: 0 auto 67px auto;
+  gap: 17px 20px;
+  grid-template-columns: 282px 282px 282px;
+  justify-content: center;
+}
