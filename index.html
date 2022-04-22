@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/Vector.svg">
+  <link rel="stylesheet" type="text/css" href="pages/index.css">
+  <title>Mesto Russia</title>
+</head>
+<body class="body">
+  <div class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/logo.svg" alt="лого">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile-info">
+          <img class="profile-info__avatar" src="./images/profile-photo.jpg" alt="лого">
+          <div class="profile-info__caption">
+            <p class="profile-info__caption_title">Жак-Ив Кусто</p>
+            <p class="profile-info__caption_subtitle">Исследователь океана</p>
+            <button class="profile-info__edit-button"><img src="./images/edit.svg"></button>
+          </div>
+        </div>
+        <button class="profile__add-button"><img src="./images/add.svg"></button>
+      </section>
+      <section class="elements">
+        <div class="element">
+          <img class="element__photo" src="./images/kirill-pershin-1088404-unsplash.jpg">
+          <div class="element__item">
+            <h2 class="element__item_title">Карачаевск</h2>
+            <img class="element__item_like" src="./images/like.svg">
+          </div>
+        </div>
+        <div class="element">
+          <img class="element__photo" src="./images/altai.jpg">
+          <div class="element__item">
+            <h2 class="element__item_title">Алтай</h2>
+            <img class="element__item_like" src="./images/like.svg">
+          </div>
+        </div>
+        <div class="element">
+          <img class="element__photo" src="./images/jacut.jpg">
+          <div class="element__item">
+            <h2 class="element__item_title">Якутия</h2>
+            <img class="element__item_like" src="./images/like.svg">
+          </div>
+        </div>
+        <div class="element">
+          <img class="element__photo" src="./images/kamchatka.jpg">
+          <div class="element__item">
+            <h2 class="element__item_title">Камчатка</h2>
+            <img class="element__item_like" src="./images/like.svg">
+          </div>
+        </div>
+        <div class="element">
+          <img class="element__photo" src="./images/karelia.jpg">
+          <div class="element__item">
+            <h2 class="element__item_title">Карелия</h2>
+            <img class="element__item_like" src="./images/like.svg">
+          </div>
+        </div>
+        <div class="element">
+          <img class="element__photo" src="./images/komi.jpg">
+          <div class="element__item">
+            <h2 class="element__item_title">Республика Коми</h2>
+            <img class="element__item_like" src="./images/like.svg">
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__caption">&copy; 2020 Mesto Russia</p>
+    </footer>
+    <section class="form-edit">
+      <h2 class="form-edit__caption">Редактировать профиль</h2>
+      <input class="form-edit__input-name">
+      <input class="form-edit__input-desc">
+      <button class="form-edit__sub-btn">Сохранить</button>
+      <button class="form-edit__close-btn"><img src="./images/Close-Icon.svg"></button>
+    </section>
+  </div>
+  <script src="./scripts/script.js"></script>
+</body>
+</html>

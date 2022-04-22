@@ -1,0 +1,22 @@
+.profile-info__caption {
+  max-width: 454px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: 75px;
+  flex-direction: column;
+}
+
+@media (max-width: 650px) {
+  .profile-info__caption {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-info__caption {
+    align-items: center;
+  }
+}
