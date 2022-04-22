@@ -1,14 +1,23 @@
-let editButton = document.querySelector('.profile-info__edit-button');
-let popupEdit = document.querySelector('.popup-edit');
-let closeButton = document.querySelector('.popup-edit__form_close-btn')
+const editButton = document.querySelector('.profile-info__edit-button');
+const popupEdit = document.querySelector('.popup-edit');
+const closeButton = document.querySelector('.popup-edit__form_close-btn');
 
-function popupOpen() {
-  popupEdit.classList.toggle('hidden');
- }
+function popupToogle(popupObject) {
+  popupObject.classList.toggle('hidden');
+}
 
- function popupClose() {
-  popupEdit.classList.toggle('hidden');
- }
+editButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  popupToogle(popupEdit);
+});
 
-editButton.addEventListener('click', popupOpen); 
-closeButton.addEventListener('click', popupClose); 
+closeButton.addEventListener('click', function (event) {
+  const currentPopup = event.target.closest('.popup-edit');
+  currentPopup.classList.toggle('hidden');
+});
+
+popupEdit.addEventListener('click', function (event) {
+  if (event.target === event.currentTarget) {
+    popupToogle(popupEdit);
+  }
+});
