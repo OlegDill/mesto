@@ -2,3 +2,12 @@
   max-width: 294px;
   margin: 0 18px 0 0;
 }
+
+@media (max-width: 600px) {
+  .profile-info__caption {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

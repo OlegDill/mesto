@@ -5,26 +5,15 @@
   border-radius: 50%;
 }
 
-@media (max-width: 1280px), (min-width: 1281px) {
-  .profile-info__avatar {
-  }
-}
-
 @media (max-width: 900px) {
   .profile-info__avatar {
     margin-right: 30px;
-    width: 100px;
-    height: 100px;  
   }
 }
 
-@media (max-width: 585px) {
+@media (max-width: 600px) {
   .profile-info__avatar {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 690px) {
-  .profile-info__avatar {
+    margin-right: 0;
+    margin-bottom: 26px;
   }
 }

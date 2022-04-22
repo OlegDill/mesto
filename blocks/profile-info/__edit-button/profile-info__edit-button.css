@@ -6,3 +6,9 @@
   background: #000000;
   margin: 15px 0 34px;
 }
+
+@media (max-width: 600px) {
+  .profile-info__edit-button {
+    margin: 0 0 0 10px;
+    }
+}

@@ -10,24 +10,16 @@
   color: #FFFFFF;
 }
 
-@media (max-width: 1280px), (min-width: 1281px) {
-  .profile-info__caption_title {
-  }
-}
-
 @media (max-width: 900px) {
-  .profile-info__caption_title {
+  .profile-info__caption_subtitle {
     font-size: 14px;
-    line-height: 18px;
+    line-height: 17px;
+    height: 14px;
     }
 }
 
-@media (max-width: 585px) {
-  .profile-info__caption_title {
-  }
-}
-
-@media (max-width: 690px) {
-  .profile-info__caption_title {
-  }
+@media (max-width: 600px) {
+  .profile-info__caption_subtitle {
+    width: 160px;
+    }
 }
