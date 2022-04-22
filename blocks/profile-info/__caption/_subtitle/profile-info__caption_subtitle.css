@@ -1,6 +1,6 @@
 .profile-info__caption_subtitle {
   margin: 0;
-  width: 336px;
+  max-width: 336px;
   height: 18px;
   font-family: 'Inter';
   font-style: normal;
@@ -15,11 +15,6 @@
     font-size: 14px;
     line-height: 17px;
     height: 14px;
-    }
-}
-
-@media (max-width: 600px) {
-  .profile-info__caption_subtitle {
-    width: 160px;
+    max-width: 160px;
     }
 }
