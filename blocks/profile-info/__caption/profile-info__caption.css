@@ -14,3 +14,9 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 600px) {
+  .profile-info__caption {
+    align-items: center;
+  }
+}

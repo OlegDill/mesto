@@ -6,6 +6,7 @@
   background: #000000;
   margin: 15px 0 34px 10px;
   transition: opacity .5s;
+  cursor: pointer;
 }
 
 .profile-info__edit-button:hover {

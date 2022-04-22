@@ -7,6 +7,7 @@
   border-radius: 2px;
   background: #000000;
   transition: opacity .5s;
+  cursor: pointer;
 }
 .profile__add-button:hover {
   opacity: 0.6;

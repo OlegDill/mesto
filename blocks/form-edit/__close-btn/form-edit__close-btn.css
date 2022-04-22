@@ -8,6 +8,7 @@
   padding: 0;
   border: none;
   transition: opacity .5s;
+  cursor: pointer;
 }
 
 .form-edit__close-btn:hover {
