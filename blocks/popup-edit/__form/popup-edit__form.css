@@ -1,5 +1,5 @@
-.form-edit {
-  position: absolute;
+.popup-edit__form {
+  position: fixed;
   width: 430px;
   height: 330px;
   top: 0;
@@ -10,5 +10,4 @@
   background: #FFFFFF;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  display: none;
 }
