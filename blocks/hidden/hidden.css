@@ -1,4 +1,5 @@
 .hidden {
   opacity: 1;
   z-index: 999;
+  overflow-y: hidden;
 }
