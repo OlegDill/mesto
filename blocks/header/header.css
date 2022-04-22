@@ -2,13 +2,7 @@
   max-width: 880px;
   min-height: 74px;
   margin: 45px auto 0 auto;
-  /* opacity: 0.7; */
   border-bottom: 1px solid #545454;
-}
-
-@media (max-width: 1280px), (min-width: 1281px) {
-  .header {
-  }
 }
 
 @media (max-width: 900px) {
@@ -20,7 +14,14 @@
 
 @media (max-width: 600px) {
   .header {
+    margin-top: 35px;
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    margin-top: 28px;
   }
 }

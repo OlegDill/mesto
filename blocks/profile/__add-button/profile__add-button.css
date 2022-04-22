@@ -6,6 +6,10 @@
   box-sizing: border-box;
   border-radius: 2px;
   background: #000000;
+  transition: opacity .5s;
+}
+.profile__add-button:hover {
+  opacity: 0.6;
 }
 
 @media (max-width: 900px) {

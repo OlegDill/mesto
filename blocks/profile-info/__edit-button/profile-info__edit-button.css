@@ -5,6 +5,11 @@
   box-sizing: border-box;
   background: #000000;
   margin: 15px 0 34px 10px;
+  transition: opacity .5s;
+}
+
+.profile-info__edit-button:hover {
+  opacity: 0.6;
 }
 
 @media (max-width: 900px) {

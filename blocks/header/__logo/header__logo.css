@@ -2,16 +2,6 @@
   height: 33px;
 }
 
-@media (max-width: 1280px), (min-width: 1281px) {
-  .header__logo {
-  }
-}
-
-@media (max-width: 900px) {
-  .header__logo {
-  }
-}
-
 @media (max-width: 600px) {
   .header__logo {
     margin-left: 27px;
