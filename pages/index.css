@@ -20,9 +20,11 @@
 @import url(../blocks/element/__item/_title/element__item_title.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__caption/footer__caption.css);
-@import url(../blocks/form-edit/form-edit.css);
-@import url(../blocks/form-edit/__caption/form-edit__caption.css);
-@import url(../blocks/form-edit/__input-name/form-edit__input-name.css);
-@import url(../blocks/form-edit/__input-desc/form-edit__input-desc.css);
-@import url(../blocks/form-edit/__sub-btn/form-edit__sub-btn.css);
-@import url(../blocks/form-edit/__close-btn/form-edit__close-btn.css);
+@import url(../blocks/popup-edit/popup-edit.css);
+@import url(../blocks/popup-edit/__form/popup-edit__form.css);
+@import url(../blocks/popup-edit/__form/_caption/popup-edit__form_caption.css);
+@import url(../blocks/popup-edit/__form/_close-btn/popup-edit__form_close-btn.css);
+@import url(../blocks/popup-edit/__form/_input-desc/popup-edit__form_input-desc.css);
+@import url(../blocks/popup-edit/__form/_input-name/popup-edit__form_input-name.css);
+@import url(../blocks/popup-edit/__form/_sub-btn/popup-edit__form_sub-btn.css);
+@import url(../blocks/hidden/hidden.css);
