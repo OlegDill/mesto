@@ -9,8 +9,19 @@
   border: none;
   transition: opacity .5s;
   cursor: pointer;
+  background-image: url(../../../../images/Close-Icon_32px.svg);
 }
 
 .popup-edit__form_close-btn:hover {
   opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .popup-edit__form_close-btn {
+    width: 20px;
+    height: 20px;
+    top: -36px;
+    right: 0;
+    background-image: url(../../../../images/Close-Icon_20px.svg);
+  }
 }

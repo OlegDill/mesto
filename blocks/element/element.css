@@ -7,23 +7,3 @@
   overflow: hidden;
   max-width: 100%;
 }
-
-@media (max-width: 1280px), (min-width: 1281px) {
-  .element {
-  }
-}
-
-@media (max-width: 1024px) {
-  .element {
-  }
-}
-
-@media (max-width: 768px) {
-  .element {
-  }
-}
-
-@media (max-width: 690px) {
-  .place {
-  }
-}
