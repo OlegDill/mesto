@@ -14,14 +14,9 @@
 
 @media (max-width: 600px) {
   .header {
-    margin-top: 35px;
+    margin-top: 28px;
     margin-left: 0;
     margin-right: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .header {
-    margin-top: 28px;
+    min-height: 56px;
   }
 }

@@ -9,3 +9,11 @@
   color: #545454;
   margin: 0;
 }
+
+@media (max-width: 600px) {
+  .footer__caption {
+    width: 282px;
+    height: 14px;
+    font-size: 14px;
+    line-height: 17px;  }
+}
