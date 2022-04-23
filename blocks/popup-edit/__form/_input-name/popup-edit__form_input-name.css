@@ -1,7 +1,8 @@
 .popup-edit__form_input-name {
   width: 358px;
   height: 27px;
-  margin: 0 auto 30px 36px;
+  display: flex;
+  margin: 0 auto 30px auto;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -10,4 +11,11 @@
   color: #000000;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .popup-edit__form_input-name {
+    width: 238px;
+    margin-bottom: 45px;
+  }
 }

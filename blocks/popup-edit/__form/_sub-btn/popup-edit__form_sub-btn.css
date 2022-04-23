@@ -10,12 +10,21 @@
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   color: #FFFFFF;
-  margin: 0 36px 0 36px;
+  display: flex;
+  margin: 0 auto 0 auto;
   transition: opacity .5s;
   cursor: pointer;
 }
 
-.form-edit__sub-btn:hover {
+.popup-edit__form_sub-btn:hover {
   opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .popup-edit__form_sub-btn {
+    width: 238px;
+  }
 }

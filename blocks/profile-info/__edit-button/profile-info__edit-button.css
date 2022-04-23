@@ -7,6 +7,9 @@
   margin: 15px 0 34px 10px;
   transition: opacity .5s;
   cursor: pointer;
+  background-image: url(../../../images/edit.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .profile-info__edit-button:hover {
