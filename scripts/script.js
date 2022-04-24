@@ -53,15 +53,10 @@ function formSubmitHandler (evt) {
 }
 
 function subBtnActive() {
-  if (nameInput.value.length > 1 && descInput.value.length > 1) {
-    subBtnEnable();
-  } else {
-    subBtnDisable()
-  }
-  if (nameInput.value === nameProfile.textContent && descInput.value === descProfile.textContent) {
+  if (((nameInput.value.length < 2) || (descInput.value.length < 2)) || ((nameInput.value === nameProfile.textContent) && (descInput.value === descProfile.textContent)) || (nameInput.value[nameInput.value.length - 1] === ' ')) {
     subBtnDisable()
   } else {
-    subBtnEnable();
+    subBtnEnable()
   }
 }
 
