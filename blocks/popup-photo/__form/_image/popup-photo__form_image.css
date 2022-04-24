@@ -1,0 +1,9 @@
+.popup-photo__form_image {
+  max-width: 500px;
+  min-height: 500px;
+  background-image: url(../../../../images/kirill-pershin-1088404-unsplash.jpg);
+  margin-top: 20%;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -9,26 +9,28 @@ const descInput = qs('.popup-edit__form_input-desc');
 const subBtn = qs('.popup-edit__form_sub-btn');
 const nameProfile = qs('.profile-info__caption_title');
 const descProfile = qs('.profile-info__caption_subtitle');
+// const photos = document.querySelectorAll('.element__photo');
+// const popupPhoto = qs('.popup-photo')
 
 editButton.addEventListener('click', function (event) {
   event.preventDefault();
   popupToogle(popupEdit);
-  popupOverflow()
+  popupOverflow();
   nameInput.value = nameProfile.textContent;
   descInput.value = descProfile.textContent;
-  subBtnDisable()
+  subBtnDisable();
 });
 
 closeButton.addEventListener('click', function (event) {
   const currentPopup = event.target.closest('.popup-edit');
   currentPopup.classList.toggle('hidden');
-  popupOverflow()
+  popupOverflow();
 });
 
 popupEdit.addEventListener('click', function (event) {
   if (event.target === event.currentTarget) {
     popupToogle(popupEdit);
-    popupOverflow()
+    popupOverflow();
   }
 });
 
@@ -49,14 +51,14 @@ function formSubmitHandler (evt) {
     nameProfile.textContent = nameInput.value;
     descProfile.textContent = descInput.value;
     popupToogle(popupEdit);
-    popupOverflow()
+    popupOverflow();
 }
 
 function subBtnActive() {
   if (((nameInput.value.length < 2) || (descInput.value.length < 2)) || ((nameInput.value === nameProfile.textContent) && (descInput.value === descProfile.textContent)) || (nameInput.value[nameInput.value.length - 1] === ' ')) {
-    subBtnDisable()
+    subBtnDisable();
   } else {
-    subBtnEnable()
+    subBtnEnable();
   }
 }
 
@@ -77,3 +79,12 @@ for (let i = 0; i < likes.length; i++) {
     likes[i].classList.toggle('element__item_like-active');
   });
 }
+
+// for (let i = 0; i < photos.length; i++) {
+//   photos[i].addEventListener("click", function() {
+//     console.log('popup photo');
+//     popupPhoto.classList.toggle('hidden');
+//     popupPhoto.classList.toggle('popup-photo_visible');
+//     popupPhoto[i].classList.toggle('hidden');
+//   });
+// }
