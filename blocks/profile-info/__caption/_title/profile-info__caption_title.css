@@ -13,10 +13,8 @@
 @media (max-width: 900px) {
   .profile-info__caption_title {
     width: 189px;
-    height: 26px;    
+    height: 26px;
     margin-bottom: 14px;
-    font-size: 38px;
-    line-height: 44px;
     font-size: 27px;
     line-height: 33px;
     }
