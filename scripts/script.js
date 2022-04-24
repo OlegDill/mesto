@@ -1,9 +1,9 @@
 const qs = (selector) => document.querySelector(selector);
+const likes = document.querySelectorAll('.element__item_like');
 const editButton = qs('.profile-info__edit-button');
 const popupEdit = qs('.popup-edit');
 const closeButton = qs('.popup-edit__form_close-btn');
 const bodyOverflow = qs('.body');
-const like = document.querySelector('.element__item_like');
 const nameInput = qs('.popup-edit__form_input-name');
 const descInput = qs('.popup-edit__form_input-desc');
 const subBtn = qs('.popup-edit__form_sub-btn');
@@ -32,17 +32,9 @@ popupEdit.addEventListener('click', function (event) {
   }
 });
 
-like.addEventListener('click', function (event) {
-  console.log('все ок');
-  const likeActive = event.target.closest('.element__item_like');
-  likeActive.classList.toggle('element__item_like-active');
-});
-
 subBtn.addEventListener('click', formSubmitHandler);
-
-function test() {
-  console.log('test');
-}
+nameInput.addEventListener('input', subBtnActive);
+descInput.addEventListener('input', subBtnActive);
 
 function popupToogle(popupObject) {
   popupObject.classList.toggle('hidden');
@@ -60,9 +52,6 @@ function formSubmitHandler (evt) {
     popupOverflow()
 }
 
-nameInput.addEventListener('input', subBtnActive);
-descInput.addEventListener('input', subBtnActive);
-
 function subBtnActive() {
   if (nameInput.value.length > 1 && descInput.value.length > 1) {
     subBtnEnable();
@@ -77,13 +66,19 @@ function subBtnActive() {
 }
 
 function subBtnDisable() {
-  console.log('кнопка выключена');
+  console.log('btn disable');
   subBtn.setAttribute('disabled', true);
   subBtn.classList.add('popup-edit__form_sub-btn_disable');
 }
 
 function subBtnEnable() {
-  console.log('кнопка включена');
+  console.log('btn enable');
   subBtn.removeAttribute('disabled');
   subBtn.classList.remove('popup-edit__form_sub-btn_disable');
+}
+
+for (let i = 0; i < likes.length; i++) {
+  likes[i].addEventListener("click", function() {
+    likes[i].classList.toggle('element__item_like-active');
+  });
 }
