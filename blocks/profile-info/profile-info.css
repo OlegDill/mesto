@@ -21,8 +21,6 @@
 @media (max-width: 600px) {
   .profile-info {
     min-height: 220px;
-    align-items: center;
-    flex-direction: column;
   }
 }
     

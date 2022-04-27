@@ -16,6 +16,7 @@
   margin: 0 auto 0 auto;
   transition: opacity .5s;
   cursor: pointer;
+  padding: 0;
 }
 
 .popup-edit__sub-btn:hover {
