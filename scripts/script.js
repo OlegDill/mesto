@@ -1,5 +1,5 @@
 const qs = (selector) => document.querySelector(selector);
-const likes = document.querySelectorAll('.element__item_like');
+const likes = document.querySelectorAll('.item__like');
 const editButton = qs('.profile-info__edit-button');
 const popupEdit = qs('.popup-edit');
 const closeButton = qs('.popup-edit__form_close-btn');
@@ -76,7 +76,7 @@ function subBtnEnable() {
 
 for (let i = 0; i < likes.length; i++) {
   likes[i].addEventListener("click", function() {
-    likes[i].classList.toggle('element__item_like-active');
+    likes[i].classList.toggle('item__like_active');
   });
 }
 
