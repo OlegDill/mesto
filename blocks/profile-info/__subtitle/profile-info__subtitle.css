@@ -1,7 +1,6 @@
 .profile-info__subtitle {
   margin: 0;
   max-width: 336px;
-  min-height: 18px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -18,7 +17,6 @@
   .profile-info__subtitle {
     font-size: 14px;
     line-height: 17px;
-    height: 14px;
     max-width: 160px;
     text-align: center;
     }

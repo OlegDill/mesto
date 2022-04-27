@@ -9,8 +9,6 @@ const descInput = qs('.popup-edit__input-desc');
 const subBtn = qs('.popup-edit__sub-btn');
 const nameProfile = qs('.profile-info__title');
 const descProfile = qs('.profile-info__subtitle');
-// const photos = document.querySelectorAll('.element__photo');
-// const popupPhoto = qs('.popup-photo')
 
 editButton.addEventListener('click', function (event) {
   event.preventDefault();
@@ -51,7 +49,6 @@ function formSubmitHandler (evt) {
     nameProfile.textContent = nameInput.value;
     descProfile.textContent = descInput.value;
     popupToogle(popupEdit);
-    // popupOverflow();
 }
 
 function subBtnActive() {
@@ -79,12 +76,3 @@ for (let i = 0; i < likes.length; i++) {
     likes[i].classList.toggle('item__like_active');
   });
 }
-
-// for (let i = 0; i < photos.length; i++) {
-//   photos[i].addEventListener("click", function() {
-//     console.log('popup photo');
-//     popupPhoto.classList.toggle('hidden');
-//     popupPhoto.classList.toggle('popup-photo_visible');
-//     popupPhoto[i].classList.toggle('hidden');
-//   });
-// }

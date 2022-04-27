@@ -1,6 +1,5 @@
 .popup-edit__caption {
   max-width: 330px;
-  min-height: 23px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
@@ -8,7 +7,7 @@
   line-height: 29px;
   color: #000000;
   display: flex;
-  margin: 34px auto 42px 36px;
+  margin: 34px auto 54px 36px;
   cursor: default;
 }
 
@@ -17,7 +16,6 @@
     font-size: 18px;
     line-height: 22px;
     max-width: 238px;
-    min-height: 22px;
     margin-top: 25px;
     margin-bottom: 75px;
     margin-left: 22px;

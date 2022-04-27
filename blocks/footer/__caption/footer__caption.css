@@ -1,6 +1,5 @@
 .footer__caption {
   max-width: 318px;
-  min-height: 18px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -13,7 +12,6 @@
 @media (max-width: 600px) {
   .footer__caption {
     max-width: 282px;
-    min-height: 14px;
     font-size: 14px;
     line-height: 17px;  }
 }
