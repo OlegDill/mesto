@@ -1,14 +1,28 @@
 .profile-info {
   margin: 0;
   max-width: 486px;
-  min-height: 73px;
+  height: 120px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .profile-info {
+    min-height: 225px;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (max-width: 600px) {
   .profile-info {
+    min-height: 220px;
     align-items: center;
-    flex-direction: column;  }
+    flex-direction: column;
+  }
 }
     

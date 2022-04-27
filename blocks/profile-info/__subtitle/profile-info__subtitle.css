@@ -1,20 +1,24 @@
-.profile-info__caption_subtitle {
+.profile-info__subtitle {
   margin: 0;
   max-width: 336px;
-  height: 18px;
+  min-height: 18px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   color: #FFFFFF;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
-  .profile-info__caption_subtitle {
+  .profile-info__subtitle {
     font-size: 14px;
     line-height: 17px;
     height: 14px;
     max-width: 160px;
+    text-align: center;
     }
 }

@@ -18,14 +18,14 @@
 
 @media (max-width: 900px) {
   .profile__add-button {
-    margin-top: 30px;
+    margin-top: 12px;
     width: 400px;
     min-height: 70px;
     }
 }
 @media (max-width: 600px) {
   .profile__add-button {
-    margin-top: 15px;
+    margin-top: 17px;
     width: 282px;
     min-height: 50px;
     }

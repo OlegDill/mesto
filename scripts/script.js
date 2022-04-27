@@ -7,8 +7,8 @@ const bodyOverflow = qs('.body');
 const nameInput = qs('.popup-edit__form_input-name');
 const descInput = qs('.popup-edit__form_input-desc');
 const subBtn = qs('.popup-edit__form_sub-btn');
-const nameProfile = qs('.profile-info__caption_title');
-const descProfile = qs('.profile-info__caption_subtitle');
+const nameProfile = qs('.profile-info__title');
+const descProfile = qs('.profile-info__subtitle');
 // const photos = document.querySelectorAll('.element__photo');
 // const popupPhoto = qs('.popup-photo')
 
@@ -51,7 +51,7 @@ function formSubmitHandler (evt) {
     nameProfile.textContent = nameInput.value;
     descProfile.textContent = descInput.value;
     popupToogle(popupEdit);
-    popupOverflow();
+    // popupOverflow();
 }
 
 function subBtnActive() {

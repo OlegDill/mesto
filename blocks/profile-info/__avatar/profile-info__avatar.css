@@ -7,13 +7,7 @@
 
 @media (max-width: 900px) {
   .profile-info__avatar {
-    margin-right: 30px;
-  }
-}
-
-@media (max-width: 600px) {
-  .profile-info__avatar {
-    margin-right: 0;
     margin-bottom: 26px;
+    margin-right: 0;
   }
 }

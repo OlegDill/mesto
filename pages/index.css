@@ -8,9 +8,8 @@
 @import url(../blocks/profile-info/__avatar/profile-info__avatar.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile-info/profile-info.css);
-@import url(../blocks/profile-info/__caption/profile-info__caption.css);
-@import url(../blocks/profile-info/__caption/_subtitle/profile-info__caption_subtitle.css);
-@import url(../blocks/profile-info/__caption/_title/profile-info__caption_title.css);
+@import url(../blocks/profile-info/__subtitle/profile-info__subtitle.css);
+@import url(../blocks/profile-info/__title/profile-info__title.css);
 @import url(../blocks/profile-info/__edit-button/profile-info__edit-button.css);
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/element/element.css);
