@@ -1,8 +1,8 @@
-.popup-edit__form_input-name {
+.popup-edit__input-desc {
   width: 358px;
   height: 27px;
   display: flex;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 48px auto;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -14,8 +14,8 @@
 }
 
 @media (max-width: 600px) {
-  .popup-edit__form_input-name {
+  .popup-edit__input-desc {
     width: 238px;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
   }
 }

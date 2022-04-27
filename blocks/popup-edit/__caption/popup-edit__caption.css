@@ -1,4 +1,4 @@
-.popup-edit__form_caption {
+.popup-edit__caption {
   max-width: 330px;
   height: 23px;
   font-family: 'Inter';
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 600px) {
-  .popup-edit__form_caption {
+  .popup-edit__caption {
     font-size: 18px;
     line-height: 22px;
     max-width: 238px;
