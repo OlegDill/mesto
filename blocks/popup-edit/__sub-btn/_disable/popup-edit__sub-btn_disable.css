@@ -1,4 +1,4 @@
-.popup-edit__sub-btn_disable {
+.popup-edit__sub-btn.popup-edit__sub-btn_disable {
   opacity: .6;
-  cursor: default !important;
+  cursor: default;
 }
