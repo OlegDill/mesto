@@ -1,26 +1,16 @@
 .profile__info {
   margin: 0;
   max-width: 486px;
-  height: 120px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
 }
 
 @media (max-width: 900px) {
   .profile__info {
-    min-height: 225px;
     align-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
   }
-}
-
-@media (max-width: 600px) {
-  .profile__info {
-    min-height: 220px;
-  }
-}
-    
+}  

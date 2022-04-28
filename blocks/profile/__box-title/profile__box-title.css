@@ -1,0 +1,17 @@
+.profile__box-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .profile__box-title {
+    margin-left: 43px;
+    margin-bottom: 9px;
+  }
+}
+@media (max-width: 600px) {
+  .profile__box-title {
+    margin-left: 27px;
+    }
+}

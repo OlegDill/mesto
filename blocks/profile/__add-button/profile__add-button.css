@@ -5,7 +5,7 @@
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
   border-radius: 2px;
-  background: #000000;
+  background: transparent;
   transition: opacity .5s;
   cursor: pointer;
   background-image: url(../../../images/add.svg);
@@ -28,5 +28,6 @@
     margin-top: 17px;
     width: 282px;
     min-height: 50px;
+    background-image: url(../../../images/add_16px.svg);
     }
 }

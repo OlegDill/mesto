@@ -1,0 +1,12 @@
+.profile__caption {
+  margin: 0 auto;
+  max-width: 336px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .profile__caption {
+    justify-content: center;
+  }
+}
