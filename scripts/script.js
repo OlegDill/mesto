@@ -8,23 +8,23 @@ const descInput = qs('.popup-edit__input-desc');
 const nameProfile = qs('.profile__title');
 const descProfile = qs('.profile__subtitle');
 
-function inputText() {
+function popupEditOpen() {
   nameInput.value = nameProfile.textContent;
   descInput.value = descProfile.textContent;
+  popupEdit.classList.add('hidden');
 };
 
-function popupToogle() {
-  popupEdit.classList.toggle('hidden');
+function popupEditClose() {
+  popupEdit.classList.remove('hidden');
 }
 
 function formSubmitHandler (evt) {
   evt.preventDefault();
   nameProfile.textContent = nameInput.value;
   descProfile.textContent = descInput.value;
-  popupToogle();
+  popupEditClose();
 }
 
-editButton.addEventListener('click', inputText);
-editButton.addEventListener('click', popupToogle);
-closeButton.addEventListener('click', popupToogle);
+editButton.addEventListener('click', popupEditOpen);
+closeButton.addEventListener('click', popupEditClose);
 formElement.addEventListener('submit', formSubmitHandler);
