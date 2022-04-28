@@ -1,4 +1,4 @@
-.profile-info__avatar {
+.profile__avatar {
   margin: 0 30px 0 0;
   width: 120px;
   height: 120px;
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 900px) {
-  .profile-info__avatar {
+  .profile__avatar {
     margin-bottom: 26px;
     margin-right: 0;
   }

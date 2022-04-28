@@ -1,14 +1,14 @@
 const qs = (selector) => document.querySelector(selector);
-const likes = document.querySelectorAll('.item__like');
-const editButton = qs('.profile-info__edit-button');
+const likes = document.querySelectorAll('.element__like');
+const editButton = qs('.profile__edit-button');
 const popupEdit = qs('.popup');
 const closeButton = qs('.popup-edit__close-btn');
 const bodyOverflow = qs('.body');
 const nameInput = qs('.popup-edit__input-name');
 const descInput = qs('.popup-edit__input-desc');
 const subBtn = qs('.popup-edit__sub-btn');
-const nameProfile = qs('.profile-info__title');
-const descProfile = qs('.profile-info__subtitle');
+const nameProfile = qs('.profile__title');
+const descProfile = qs('.profile__subtitle');
 
 editButton.addEventListener('click', function (event) {
   event.preventDefault();
@@ -73,6 +73,6 @@ function subBtnEnable() {
 
 for (let i = 0; i < likes.length; i++) {
   likes[i].addEventListener("click", function() {
-    likes[i].classList.toggle('item__like_active');
+    likes[i].classList.toggle('element__like_active');
   });
 }

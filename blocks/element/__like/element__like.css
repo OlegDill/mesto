@@ -1,4 +1,4 @@
-.item__like {
+.element__like {
   margin: 28px 20px 30px 0;
   width: 22px;
   height: 19px;
@@ -9,6 +9,6 @@
   background-position: center;
 }
 
-.item__like:hover {
+.element__like:hover {
   opacity: .5;
 }

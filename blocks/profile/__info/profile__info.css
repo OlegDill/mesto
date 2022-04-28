@@ -1,4 +1,4 @@
-.profile-info {
+.profile__info {
   margin: 0;
   max-width: 486px;
   height: 120px;
@@ -8,7 +8,7 @@
 }
 
 @media (max-width: 900px) {
-  .profile-info {
+  .profile__info {
     min-height: 225px;
     align-content: center;
     flex-direction: column;
@@ -19,7 +19,7 @@
 }
 
 @media (max-width: 600px) {
-  .profile-info {
+  .profile__info {
     min-height: 220px;
   }
 }

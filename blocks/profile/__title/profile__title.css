@@ -1,4 +1,4 @@
-.profile-info__title {
+.profile__title {
   max-width: 320px;
   margin: 21px 0 7px 0;
   font-family: 'Inter';
@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 900px) {
-  .profile-info__title {
+  .profile__title {
     margin-top: 0;
     max-width: 189px;
     margin-bottom: 14px;

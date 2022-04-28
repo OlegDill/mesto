@@ -1,4 +1,4 @@
-.profile-info__subtitle {
+.profile__subtitle {
   margin: 0;
   max-width: 336px;
   font-family: 'Inter';
@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 900px) {
-  .profile-info__subtitle {
+  .profile__subtitle {
     font-size: 14px;
     line-height: 17px;
     max-width: 160px;
