@@ -1,11 +1,11 @@
 .popup-edit {
   position: fixed;
   max-width: 430px;
-  top: 0;
-  left: 0;
-  bottom: 0;
   right: 0;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0;
   background: #FFFFFF;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -13,8 +13,9 @@
 
 @media (max-width: 600px) {
   .popup-edit {
-    margin-left: 19px;
-    margin-right: 19px;
     max-width: 600px;
+    bottom: auto;
+    right: auto;
+    width: 88%;
   }
 }
