@@ -2,6 +2,9 @@
   margin: 28px 20px 30px 0;
   width: 22px;
   height: 19px;
+  border: none;
+  padding: 0;
+  background-color: white;
   transition: opacity .5s;
   cursor: pointer;
   background-image: url(../../../images/like.svg);
