@@ -1,4 +1,4 @@
-.popup-edit__caption {
+.popup__caption {
   max-width: 330px;
   font-family: 'Inter', ‘Arial’, sans-serif;
   font-style: normal;
@@ -12,7 +12,7 @@
 }
 
 @media (max-width: 900px) {
-  .popup-edit__caption {
+  .popup__caption {
     font-size: 18px;
     line-height: 22px;
     max-width: 238px;

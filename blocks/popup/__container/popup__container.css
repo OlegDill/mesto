@@ -1,4 +1,4 @@
-.popup-edit {
+.popup__container {
   position: fixed;
   max-width: 430px;
   right: 0;
@@ -12,7 +12,7 @@
 }
 
 @media (max-width: 600px) {
-  .popup-edit {
+  .popup__container {
     max-width: 600px;
     bottom: auto;
     right: auto;
