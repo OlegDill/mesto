@@ -11,19 +11,22 @@ const addButton = qs('.profile__add-button');
 const popupAdd = qs('.popup-add');
 const closeButtonPopupAdd = qs('.popup-add__close-btn');
 const formAddElement = qs('.popup-add__form');
-const image = document.querySelectorAll('.element__photo');
-const title = document.querySelectorAll('.element__title');
+const elementPhoto = document.querySelectorAll('.element__photo');
+const elementTitle = document.querySelectorAll('.element__title');
 const newElement = qs('.elements');
 const elementItem = document.querySelectorAll('.element');
 const nameInputAdd = qs('.popup-add__input_name');
 const descInputAdd = qs('.popup-add__input_desc');
 const likes = document.querySelectorAll('.element__like');
 const deleteButton = document.querySelectorAll('.element__delete');
-
+const popupPhoto = qs('.popup-photo');
+const closeButtonPopupPhoto = qs('.popup-photo__close-btn');
+const popupPhotoImage = qs('.popup-photo__image');
+const popupPhotoSubtitle = qs('.popup-photo__subtitle');
 const initialCards = [
   {
     name: 'Карачаевск',
-    link: 'https://i.yapx.ru/R2wZU.jpg'
+    link: 'https://i.yapx.ru/R2zrO.png'
   },
   {
     name: 'Алтай',
@@ -46,39 +49,39 @@ const initialCards = [
     link: 'https://i.yapx.ru/R2wZV.jpg'
   }
 ];
-
+// функция загрузки страницы
 function ready() {
-  for (let i = 0; i < image.length; i++) {
-    image[i].src = initialCards[i].link;
-    title[i].textContent = initialCards[i].name;
+  for (let i = 0; i < elementPhoto.length; i++) {
+    elementPhoto[i].src = initialCards[i].link;
+    elementTitle[i].textContent = initialCards[i].name;
   }
 }
-
+// функция открытия popup-edit
 function popupEditOpen() {
   nameInput.value = nameProfile.textContent;
   descInput.value = descProfile.textContent;
   popupEdit.classList.add('popup_hidden', true);
 };
-
+// функция закрытия popup-edit
 function popupEditClose() {
   popupEdit.classList.remove('popup_hidden');
 }
-
+// функция сохранения данных с popup-edit
 function formSubmitHandler (evt) {
   evt.preventDefault();
   nameProfile.textContent = nameInput.value;
   descProfile.textContent = descInput.value;
   popupEditClose();
 }
-
+// открытие popup-add
 function popupAddOpen() {
   popupAdd.classList.add('popup-add_hidden', true);
 }
-
+// закрытие popup-add
 function popupAddClose() {
   popupAdd.classList.remove('popup-add_hidden');
 }
-
+// добавление карточки 
 function formAddSubmitHandler(evt) {
   evt.preventDefault();
   newElement.insertAdjacentHTML('afterbegin', 
@@ -93,26 +96,43 @@ function formAddSubmitHandler(evt) {
   descInputAdd.value = '';
   nameInputAdd.value = '';
   popupAddClose();
+  console.log(elementItem)
+  console.log(likes)
 }
-
-for (let i = 0; i < likes.length; i++) {
+// лайки карточкам
+for (let i = 0; i < elementItem.length; i++) {
+  const likes = document.querySelectorAll('.element__like');
   likes[i].addEventListener("click", function() {
     likes[i].classList.toggle('element__like_active');
   });
 }
-
-for (let i = 0; i < deleteButton.length; i++) {
+// удаление карточек
+for (let i = 0; i < elementItem.length; i++) {
   deleteButton[i].addEventListener("click", function() {
     elementItem[i].remove();
   });
 }
-
+// открытие popup-photo
+for (let i = 0; i < elementItem.length; i++) {
+  elementPhoto[i].addEventListener('click', function() {
+    popupPhoto.classList.add('popup-photo_hidden', true);
+    popupPhotoImage.src = elementPhoto[i].src;
+    popupPhotoSubtitle.textContent = elementTitle[i].textContent;
+  });
+}
+// закрытие popup-photo
+function popupPhotoClose() {
+  popupPhoto.classList.remove('popup-photo_hidden');
+}
+// слушатель загрузки страницы
 document.addEventListener("DOMContentLoaded", ready);
-
+// слушатели popup-edit
 editButton.addEventListener('click', popupEditOpen);
 closeButton.addEventListener('click', popupEditClose);
 formElement.addEventListener('submit', formSubmitHandler);
-
+// слушатели popup-add
 addButton.addEventListener('click', popupAddOpen)
 closeButtonPopupAdd.addEventListener('click', popupAddClose);
 formAddElement.addEventListener('submit', formAddSubmitHandler);
+// слушатели popup-photo
+closeButtonPopupPhoto.addEventListener('click', popupPhotoClose);
