@@ -1,4 +1,7 @@
 .element__photo {
   max-width: 100%;
   cursor: pointer;
+  height: 282px;
+  width: 282px;
+  background-size: cover;
 }
