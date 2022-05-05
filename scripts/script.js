@@ -96,12 +96,9 @@ function formAddSubmitHandler(evt) {
   descInputAdd.value = '';
   nameInputAdd.value = '';
   popupAddClose();
-  console.log(elementItem)
-  console.log(likes)
 }
 // лайки карточкам
-for (let i = 0; i < elementItem.length; i++) {
-  const likes = document.querySelectorAll('.element__like');
+for (let i = 0; i < likes.length; i++) {
   likes[i].addEventListener("click", function() {
     likes[i].classList.toggle('element__like_active');
   });
