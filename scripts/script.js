@@ -1,4 +1,5 @@
 const qs = (selector) => document.querySelector(selector);
+const qsAll = (selector) => document.querySelectorAll(selector);
 const editButton = qs('.profile__edit-button');
 const popupEdit = qs('.popup');
 const closeButton = qs('.popup__close-btn');
@@ -11,14 +12,14 @@ const addButton = qs('.profile__add-button');
 const popupAdd = qs('.popup-add');
 const closeButtonPopupAdd = qs('.popup-add__close-btn');
 const formAddElement = qs('.popup-add__form');
-const elementPhoto = document.querySelectorAll('.element__photo');
-const elementTitle = document.querySelectorAll('.element__title');
+const elementPhoto = qsAll('.element__photo');
+const elementTitle = qsAll('.element__title');
 const newElement = qs('.elements');
-const elementItem = document.querySelectorAll('.element');
+const elementItem = qsAll('.element');
 const nameInputAdd = qs('.popup-add__input_name');
 const descInputAdd = qs('.popup-add__input_desc');
-const likes = document.querySelectorAll('.element__like');
-const deleteButton = document.querySelectorAll('.element__delete');
+const likes = qsAll('.element__like');
+const deleteButton = qsAll('.element__delete');
 const popupPhoto = qs('.popup-photo');
 const closeButtonPopupPhoto = qs('.popup-photo__close-btn');
 const popupPhotoImage = qs('.popup-photo__image');
@@ -81,42 +82,111 @@ function popupAddOpen() {
 function popupAddClose() {
   popupAdd.classList.remove('popup-add_hidden');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // добавление карточки 
 function formAddSubmitHandler(evt) {
   evt.preventDefault();
-  newElement.insertAdjacentHTML('afterbegin', 
-  `<article class="element">
-    <img class="element__photo" src="${descInputAdd.value}" alt="фото места" />
-    <button type="button" aria-label="Удалить" class="element__delete"></button>
-    <div class="element__item">
-      <h2 class="element__title">${nameInputAdd.value}</h2>
-      <button type="button" aria-label="Лайк" class="element__like"></button>
-    </div>
-  </article>`);
+  let newArticle = document.createElement(`article`);
+  newArticle.className = 'element';
+  newArticle.innerHTML = `<img class="element__photo" src="${descInputAdd.value}" alt="фото места" />
+                          <button type="button" aria-label="Удалить" class="element__delete"></button>
+                          <div class="element__item">
+                            <h2 class="element__title">${nameInputAdd.value}</h2>
+                            <button type="button" aria-label="Лайк" class="element__like"></button>
+                          </div>`;
+
+
+
+  for (let i = 0; i < elementItem.length; i++) {
+    likes[i].addEventListener("click", function() {
+      likes[i].classList.toggle('element__like_active');
+      console.log('слушатель лайков в функции, количество карточек: ' + elementItem.length)
+    });
+  }
+
+  newElement.insertBefore(newArticle, newElement.firstChild);
+
   descInputAdd.value = '';
   nameInputAdd.value = '';
   popupAddClose();
+
+  console.log('функция сабмит')
 }
+
+
+
+
 // лайки карточкам
-for (let i = 0; i < likes.length; i++) {
-  likes[i].addEventListener("click", function() {
-    likes[i].classList.toggle('element__like_active');
-  });
-}
+// for (let i = 0; i < elementItem.length; i++) {
+//   likes[i].addEventListener("click", function() {
+//     likes[i].classList.toggle('element__like_active');
+//     console.log('слушатель лайков, количество карточек: ' + elementItem.length);
+//   });
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // удаление карточек
-for (let i = 0; i < elementItem.length; i++) {
-  deleteButton[i].addEventListener("click", function() {
-    elementItem[i].remove();
-  });
-}
+// for (let i = 0; i < elementItem.length; i++) {
+//   deleteButton[i].addEventListener("click", function() {
+//     elementItem[i].remove();
+//   });
+// }
 // открытие popup-photo
-for (let i = 0; i < elementItem.length; i++) {
-  elementPhoto[i].addEventListener('click', function() {
-    popupPhoto.classList.add('popup-photo_hidden', true);
-    popupPhotoImage.src = elementPhoto[i].src;
-    popupPhotoSubtitle.textContent = elementTitle[i].textContent;
-  });
-}
+// for (let i = 0; i < elementItem.length; i++) {
+//   elementPhoto[i].addEventListener('click', function() {
+//     popupPhoto.classList.add('popup-photo_hidden', true);
+//     popupPhotoImage.src = elementPhoto[i].src;
+//     popupPhotoSubtitle.textContent = elementTitle[i].textContent;
+//   });
+// }
 // закрытие popup-photo
 function popupPhotoClose() {
   popupPhoto.classList.remove('popup-photo_hidden');
