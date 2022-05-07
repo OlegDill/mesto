@@ -82,35 +82,8 @@ function popupAddOpen() {
 function popupAddClose() {
   popupAdd.classList.remove('popup-add_hidden');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// добавление карточки 
-function formAddSubmitHandler(evt) {
+// функция добавление карточки 
+function formAddSubmitHandler(evt, el) {
   evt.preventDefault();
   let newArticle = document.createElement(`article`);
   newArticle.className = 'element';
@@ -120,73 +93,46 @@ function formAddSubmitHandler(evt) {
                             <h2 class="element__title">${nameInputAdd.value}</h2>
                             <button type="button" aria-label="Лайк" class="element__like"></button>
                           </div>`;
-
-
-
-  for (let i = 0; i < elementItem.length; i++) {
-    likes[i].addEventListener("click", function() {
-      likes[i].classList.toggle('element__like_active');
-      console.log('слушатель лайков в функции, количество карточек: ' + elementItem.length)
-    });
-  }
-
+  // слушатель лайков новых карточек
+  newArticle.querySelector('.element__like').addEventListener('click', likeCard);
+  // слушатель удаления новых карточек
+  newArticle.querySelector('.element__delete').addEventListener('click', deleteCard);
+  // слушатель фото новых карточек
+  newArticle.querySelector('.element__photo').addEventListener('click', openCard);
+  // добавление новой карточки
   newElement.insertBefore(newArticle, newElement.firstChild);
-
+  // очистка input и закрытие формы
   descInputAdd.value = '';
   nameInputAdd.value = '';
   popupAddClose();
-
-  console.log('функция сабмит')
 }
-
-
-
-
-// лайки карточкам
-// for (let i = 0; i < elementItem.length; i++) {
-//   likes[i].addEventListener("click", function() {
-//     likes[i].classList.toggle('element__like_active');
-//     console.log('слушатель лайков, количество карточек: ' + elementItem.length);
-//   });
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// удаление карточек
-// for (let i = 0; i < elementItem.length; i++) {
-//   deleteButton[i].addEventListener("click", function() {
-//     elementItem[i].remove();
-//   });
-// }
+// функция лайков карточкам
+function likeCard(evt) { 
+  evt.target.classList.toggle('element__like_active');
+}
+// слушатель лайков стартовым карточкам
+for (let i = 0; i < elementItem.length; i++) {
+  likes[i].addEventListener("click", likeCard)
+};
+// функция удаления карточек
+function deleteCard(evt) { 
+  evt.target.closest('.element').remove();
+};
+// слушатель удаления старовым карточкам
+for (let i = 0; i < elementItem.length; i++) {
+  deleteButton[i].addEventListener("click", deleteCard)
+}
 // открытие popup-photo
-// for (let i = 0; i < elementItem.length; i++) {
-//   elementPhoto[i].addEventListener('click', function() {
-//     popupPhoto.classList.add('popup-photo_hidden', true);
-//     popupPhotoImage.src = elementPhoto[i].src;
-//     popupPhotoSubtitle.textContent = elementTitle[i].textContent;
-//   });
-// }
+function openCard(evt) {
+  console.log(evt.target.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.textContent);
+  popupPhotoImage.src = evt.target.closest('.element__photo').src;
+  popupPhotoSubtitle.textContent = evt.target.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.textContent;
+  popupPhoto.classList.add('popup-photo_hidden', true);
+}
+// слушатель фото стартовых карточек
+for (let i = 0; i < elementItem.length; i++) {
+  elementPhoto[i].addEventListener('click', openCard)
+}
 // закрытие popup-photo
 function popupPhotoClose() {
   popupPhoto.classList.remove('popup-photo_hidden');
