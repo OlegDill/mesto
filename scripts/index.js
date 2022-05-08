@@ -35,21 +35,14 @@ const getItemElement = (title, photo) => {
   elementPhoto.addEventListener('click', openCard);
   return newItemElement;
 }
-
+// функция добавления карточек
 const renderItem = (wrap, title, photo) => {
-  wrap.append(getItemElement(title, photo));
+  wrap.prepend(getItemElement(title, photo));
 }
-
+// добавления стартовых карточек
 initialCards.forEach((title) => {
   renderItem(elementNew, title.name, title.link)
 })
-
-
-
-
-
-
-
 // функция открытия popup-edit
 function popupEditOpen() {
   popupEditInputName.value = profileTitle.textContent;
@@ -78,8 +71,7 @@ function popupAddClose() {
 // функция добавление карточки 
 function formAddSubmitHandler(evt) {
   evt.preventDefault();
-  console.log('ok')
-  // renderItem()
+  renderItem(elementNew, popupAddInputName.value, popupAddInputDesc.value)
   // очистка input и закрытие формы
   popupAddInputDesc.value = '';
   popupAddInputName.value = '';
