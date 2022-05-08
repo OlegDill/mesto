@@ -47,26 +47,14 @@ initialCards.forEach((title) => {
 function popupEditOpen() {
   popupEditInputName.value = profileTitle.textContent;
   popupEditInputDesc.value = profileSubtitle.textContent;
-  popupEdit.classList.add('popup-edit_hidden', true);
+  openPopup(popupEdit);
 };
-// функция закрытия popup-edit
-function popupEditClose() {
-  popupEdit.classList.remove('popup-edit_hidden');
-}
 // функция сохранения данных с popup-edit
-function formSubmitHandler (evt) {
+function formEditSubmitHandler (evt) {
   evt.preventDefault();
   profileTitle.textContent = popupEditInputName.value;
   profileSubtitle.textContent = popupEditInputDesc.value;
-  popupEditClose();
-}
-// открытие popup-add
-function popupAddOpen() {
-  popupAdd.classList.add('popup-add_hidden', true);
-}
-// закрытие popup-add
-function popupAddClose() {
-  popupAdd.classList.remove('popup-add_hidden');
+  closePopup(popupEdit);
 }
 // функция добавление карточки 
 function formAddSubmitHandler(evt) {
@@ -75,7 +63,7 @@ function formAddSubmitHandler(evt) {
   // очистка input и закрытие формы
   popupAddInputDesc.value = '';
   popupAddInputName.value = '';
-  popupAddClose();
+  closePopup(popupAdd);
 }
 // функция лайков карточкам
 function likeCard(evt) { 
@@ -89,19 +77,23 @@ function deleteCard(evt) {
 function openCard(evt) {
   popupPhotoImage.src = evt.target.closest('.element__photo').src;
   popupPhotoSubtitle.textContent = evt.target.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.textContent;
-  popupPhoto.classList.add('popup-photo_hidden', true);
+  openPopup(popupPhoto);
 }
-// закрытие popup-photo
-function popupPhotoClose() {
-  popupPhoto.classList.remove('popup-photo_hidden');
+// функция открытия popup
+function openPopup(popup) {
+  popup.classList.add('popup-hidden', true);
+}
+// функция закрытия popup
+function closePopup(popup) {
+  popup.classList.remove('popup-hidden');
 }
 // слушатели popup-edit
 profileButtonEdit.addEventListener('click', popupEditOpen);
-popupEditButtonClose.addEventListener('click', popupEditClose);
-popupEditForm.addEventListener('submit', formSubmitHandler);
+popupEditButtonClose.addEventListener('click', () => closePopup(popupEdit));
+popupEditForm.addEventListener('submit', formEditSubmitHandler);
 // слушатели popup-add
-buttonAdd.addEventListener('click', popupAddOpen)
-popupAddButtonClose.addEventListener('click', popupAddClose);
+buttonAdd.addEventListener('click', () => openPopup(popupAdd));
+popupAddButtonClose.addEventListener('click', () => closePopup(popupAdd));
 popupAddForm.addEventListener('submit', formAddSubmitHandler);
 // слушатели popup-photo
-popupPhotoCloseBtn.addEventListener('click', popupPhotoClose);
+popupPhotoCloseBtn.addEventListener('click', () => closePopup(popupPhoto));
