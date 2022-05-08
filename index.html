@@ -80,14 +80,14 @@
     <footer class="footer">
       <p class="footer__caption">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup">
-      <div class="popup__container">
-        <form class="popup__form" name="formEdit">
-          <h2 class="popup__caption">Редактировать профиль</h2>
-          <input type="text" class="popup__input popup__input_name" name="inputName">
-          <input type="text" class="popup__input popup__input_desc" name="inputDesc">
-          <button type="submit" class="popup__sub-btn">Сохранить</button>
-          <button type="button" class="popup__close-btn"></button>
+    <div class="popup-edit">
+      <div class="popup-edit__container">
+        <form class="popup-edit__form" name="formEdit">
+          <h2 class="popup-edit__caption">Редактировать профиль</h2>
+          <input type="text" class="popup-edit__input popup-edit__input_name" name="inputName">
+          <input type="text" class="popup-edit__input popup-edit__input_desc" name="inputDesc">
+          <button type="submit" class="popup-edit__sub-btn">Сохранить</button>
+          <button type="button" class="popup-edit__close-btn"></button>
         </form>
       </div>
     </div>
@@ -96,7 +96,7 @@
         <form class="popup-add__form" name="formAdd">
           <h2 class="popup-add__caption">Новое место</h2>
           <input type="text" class="popup-add__input popup-add__input_name" name="inputName" placeholder="Название">
-          <input type="text" class="popup-add__input popup-add__input_desc" name="inputDesc" placeholder="Ссылка на картинку">
+          <input type="url" class="popup-add__input popup-add__input_desc" name="inputDesc" placeholder="Ссылка на картинку">
           <button type="submit" class="popup-add__sub-btn">Создать</button>
           <button type="button" class="popup-add__close-btn"></button>
         </form>
@@ -112,6 +112,7 @@
       </div>
     </div>
   </div>
-  <script src="./scripts/script.js"></script>
+  <script src="./scripts/cards.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>

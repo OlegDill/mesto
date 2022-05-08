@@ -29,15 +29,15 @@
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__caption/footer__caption.css);
-/* popup */
-@import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__caption/popup__caption.css);
-@import url(../blocks/popup/__close-btn/popup__close-btn.css);
-@import url(../blocks/popup/__input/popup__input.css);
-@import url(../blocks/popup/__sub-btn/popup__sub-btn.css);
-@import url(../blocks/popup/__form/popup__form.css);
-@import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/_hidden/popup_hidden.css);
+/* popup-edit */
+@import url(../blocks/popup-edit/popup-edit.css);
+@import url(../blocks/popup-edit/__caption/popup-edit__caption.css);
+@import url(../blocks/popup-edit/__close-btn/popup-edit__close-btn.css);
+@import url(../blocks/popup-edit/__container/popup-edit__container.css);
+@import url(../blocks/popup-edit/__form/popup-edit__form.css);
+@import url(../blocks/popup-edit/__input/popup-edit__input.css);
+@import url(../blocks/popup-edit/__sub-btn/popup-edit__sub-btn.css);
+@import url(../blocks/popup-edit/_hidden/popup-edit_hidden.css);
 /* popup-add */
 @import url(../blocks/popup-add/popup-add.css);
 @import url(../blocks/popup-add/__caption/popup-add__caption.css);

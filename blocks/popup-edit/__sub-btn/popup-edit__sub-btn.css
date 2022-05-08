@@ -1,4 +1,4 @@
-.popup__sub-btn {
+.popup-edit__sub-btn {
   width: 358px;
   height: 50px;
   background: #000000;
@@ -19,18 +19,18 @@
   padding: 0;
 }
 
-.popup__sub-btn:hover {
+.popup-edit__sub-btn:hover {
   opacity: 0.8;
 }
 
 @media (max-width: 600px) {
-  .popup__sub-btn {
+  .popup-edit__sub-btn {
     margin-top: 45px;
   }
 }
 
 @media (max-width: 900px) {
-  .popup__sub-btn {
+  .popup-edit__sub-btn {
     width: 238px;
     height: 46px;
     font-size: 14px;
