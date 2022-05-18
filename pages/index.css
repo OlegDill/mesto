@@ -38,6 +38,7 @@
 @import url(../blocks/popup-edit/__form/popup-edit__form.css);
 @import url(../blocks/popup-edit/__input/popup-edit__input.css);
 @import url(../blocks/popup-edit/__sub-btn/popup-edit__sub-btn.css);
+@import url(../blocks/popup-edit/__sub-btn/_disable/popup-edit__sub-btn_disable.css);
 /* popup-add */
 @import url(../blocks/popup-add/popup-add.css);
 @import url(../blocks/popup-add/__caption/popup-add__caption.css);

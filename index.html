@@ -44,10 +44,10 @@
     </template>
     <div class="popup-edit">
       <div class="popup-edit__container">
-        <form class="popup-edit__form" name="formEdit">
+        <form class="popup-edit__form" name="formEdit" novalidate>
           <h2 class="popup-edit__caption">Редактировать профиль</h2>
-          <input type="text" class="popup-edit__input popup-edit__input_name" name="inputName">
-          <input type="text" class="popup-edit__input popup-edit__input_desc" name="inputDesc">
+          <input type="text" class="popup-edit__input popup-edit__input_name" name="inputName" required maxlength="40" minlength="2">
+          <input type="text" class="popup-edit__input popup-edit__input_desc" name="inputDesc" required maxlength="200" minlength="2">
           <button type="submit" class="popup-edit__sub-btn">Сохранить</button>
           <button type="button" class="popup-edit__close-btn"></button>
         </form>
