@@ -18,7 +18,29 @@ const popupPhotoCloseBtn = document.querySelector('.popup-photo__close-btn');
 const popupPhotoImage = document.querySelector('.popup-photo__image');
 const popupPhotoSubtitle = document.querySelector('.popup-photo__subtitle');
 const template = document.querySelector('.temp');
-
+const body = document.querySelector('.body');
+// функция toogle вертикальной прокрутки
+function popupOverflow() { 
+    body.classList.toggle('body_overflow'); 
+};
+// слушатель popup-edit
+popupEdit.addEventListener('click', function (event) { 
+  if (event.target === event.currentTarget) { 
+    closePopup(popupEdit); 
+  }
+}); 
+// слушатель popup-add
+popupAdd.addEventListener('click', function (event) { 
+  if (event.target === event.currentTarget) { 
+    closePopup(popupAdd); 
+  }
+}); 
+// слушатель popup-photo
+popupPhoto.addEventListener('click', function (event) { 
+  if (event.target === event.currentTarget) { 
+    closePopup(popupPhoto); 
+  }
+}); 
 const getItemElement = (title, photo) => {
   const newItemElement = template.content.cloneNode(true);
   const newItemPhoto = newItemElement.querySelector('.element__photo');
@@ -80,10 +102,12 @@ function openCard(evt) {
 // функция открытия popup
 function openPopup(popup) {
   popup.classList.add('popup-hidden', true);
+  popupOverflow()
 }
 // функция закрытия popup
 function closePopup(popup) {
   popup.classList.remove('popup-hidden');
+  popupOverflow()
 }
 // слушатели popup-edit
 profileButtonEdit.addEventListener('click', popupEditOpen);
