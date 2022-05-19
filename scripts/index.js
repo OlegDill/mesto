@@ -25,6 +25,7 @@ const popupPhotoImage = document.querySelector('.popup-photo__image');
 const popupPhotoSubtitle = document.querySelector('.popup-photo__subtitle');
 const template = document.querySelector('.temp');
 const body = document.querySelector('.body');
+// функция создания новой карточки
 const getItemElement = (title, photo) => {
   const newItemElement = template.content.cloneNode(true);
   const newItemPhoto = newItemElement.querySelector('.element__photo');
@@ -55,20 +56,19 @@ function popupEditOpen() {
   // isValid();
 };
 // функция сохранения данных с popup-edit
-function formEditSubmitHandler (evt) {
+function formEditSubmitHandler (popup, evt, InputOne, errorOne, InputTwo, errorTwo) {
   evt.preventDefault();
   profileTitle.textContent = popupEditInputName.value;
   profileSubtitle.textContent = popupEditInputDesc.value;
-  closePopup(popupEdit, event);
+  closePopup(popup, evt, InputOne, errorOne, InputTwo, errorTwo);
 };
 // функция добавление карточки 
-function formAddSubmitHandler(evt) {
+function formAddSubmitHandler(popup, evt, InputOne, errorOne, InputTwo, errorTwo) {
   evt.preventDefault();
   renderItem(elementNew, popupAddInputName.value, popupAddInputDesc.value)
-  // очистка input и закрытие формы
   popupAddInputDesc.value = '';
   popupAddInputName.value = '';
-  closePopup(popupAdd, event);
+  closePopup(popup, evt, InputOne, errorOne, InputTwo, errorTwo);
 };
 // функция лайков карточкам
 function likeCard(evt) { 
@@ -78,18 +78,20 @@ function likeCard(evt) {
 function deleteCard(evt) { 
   evt.target.closest('.element').remove();
 };
-// открытие popup-photo
+// функция открытия popup-photo
 function openCard(evt) {
   popupPhotoImage.src = evt.target.closest('.element__photo').src;
   popupPhotoSubtitle.textContent = evt.target.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.textContent;
   popupPhoto.classList.add('popup-hidden', true);
   popupOverflow();
+  document.addEventListener('keydown', escPopup);
 };
-// закрытие popup-photo
+// функция закрытия popup-photo
 function closeCard(popup, event) {
-  if (event.target === event.currentTarget) {
+  if (event.target === event.currentTarget || event.key === 'Escape') {
     popup.classList.remove('popup-hidden');
     popupOverflow();
+    document.removeEventListener('keydown', escPopup);
   }
 }
 // функция открытия popup
@@ -97,17 +99,16 @@ function openPopup(popup, elementBtn, event, elementInputOne, errorOne, elementI
   popup.classList.add('popup-hidden', true);
   popupOverflow();
   subBtnDisable(elementBtn);
-  document.addEventListener('keydown', () => escPopup(event, elementInputOne, errorOne, elementInputTwo, errorTwo));
+  document.addEventListener('keydown', escPopup);
 };
 // функция закрытия popup
 function closePopup(popup, event, elementInputOne, errorOne, elementInputTwo, errorTwo) {
-  console.log(event.target.classList.value)
-  if (event.target === event.currentTarget || event.target.classList.value === 'profile__edit-button') {
+  if (event.target === event.currentTarget || event.key === 'Escape') {
     popup.classList.remove('popup-hidden');
     popupOverflow();
     hideInputError(elementInputOne, errorOne);
     hideInputError(elementInputTwo, errorTwo);
-    document.removeEventListener('keydown', () => escPopup(event, elementInputOne, errorOne, elementInputTwo, errorTwo));
+    document.removeEventListener('keydown', escPopup);
   }
 };
 // функция toogle вертикального скролла
@@ -132,61 +133,35 @@ function subBtnActive(elementInputOne, elementInputTwo, elementBtn) {
     subBtnEnable(elementBtn); 
   }
 };
-// Функция добавления ошибки валидности
-const showInputError = (elementInput, error) => {
-  elementInput.classList.add('input_error');
-  error.textContent = elementInput.validationMessage;
-  error.classList.add('error-hidden');
-};
-// Функция удаления ошибки валидности
-const hideInputError = (elementInput, error) => {
-  elementInput.classList.remove('input_error');
-  error.textContent = '';
-  error.classList.remove('error-hidden', true);
-};
-// Функция проверки валидности поля
-const isValid = (elementInputOne, error, elementBtn, elementInputTwo) => {
-  subBtnActive(elementInputOne, elementInputTwo, elementBtn);
-  if (!elementInputOne.validity.valid) {
-    showInputError(elementInputOne, error);
-  } else {
-    hideInputError(elementInputOne, error);
-  }
-};
-
-
-
-
-
-
-
-const escPopup = (evt, elementInputOne, errorOne, elementInputTwo, errorTwo) => {
-  if (event.key === 'Escape') {
+// функция закрытия popup по кнопке Escape
+const escPopup = (evt) => {
+  if (evt.key === 'Escape') {
     const popup = document.querySelector('.popup-hidden');
-    console.log(popup)
-    closePopup(popup, evt, elementInputOne, errorOne, elementInputTwo, errorTwo);
+    if (popup.classList.value === 'popup-edit popup-hidden true' || popup.classList.value === 'popup-add popup-hidden true' || popup.classList.value === 'popup-edit true popup-hidden' || popup.classList.value === 'popup-add true popup-hidden') {
+      const elOne = popup.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling;
+      const errOne = popup.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
+      const elTwo = popup.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
+      const errTwo = popup.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
+      closePopup(popup, evt, elOne, errOne, elTwo, errTwo);
+    } else {
+      closeCard(popup, event);
+    }
   }
 };
-
-
-
-
-
 // слушатели popup-edit
 popupEdit.addEventListener('click', () => closePopup(popupEdit, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError));
 profileButtonEdit.addEventListener('click', popupEditOpen);
 popupEditButtonClose.addEventListener('click', () => closePopup(popupEdit, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError));
-popupEditForm.addEventListener('submit', formEditSubmitHandler);
+popupEditForm.addEventListener('submit', () => formEditSubmitHandler(popupEdit, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError));
 popupEditInputName.addEventListener('input', () => isValid(popupEditInputName, popupEditNameError, popupEditSubBtn, popupEditInputDesc));
 popupEditInputDesc.addEventListener('input', () => isValid(popupEditInputDesc, popupEditDescError, popupEditSubBtn, popupEditInputName));
 // слушатели popup-add
 popupAdd.addEventListener('click', () => closePopup(popupAdd, event, popupAddInputName, popupAddNameError, popupAddInputDesc, popupAddDescError));
 buttonAdd.addEventListener('click', () => openPopup(popupAdd, popupAddSubBtn));
 popupAddButtonClose.addEventListener('click', () => closePopup(popupAdd, event, popupAddInputName, popupAddNameError, popupAddInputDesc, popupAddDescError));
-popupAddForm.addEventListener('submit', formAddSubmitHandler);
+popupAddForm.addEventListener('submit', () => formAddSubmitHandler(popupAdd, event, popupAddInputName, popupAddNameError, popupAddInputDesc, popupAddDescError));
 popupAddInputName.addEventListener('input', () => isValid(popupAddInputName, popupAddNameError, popupAddSubBtn, popupAddInputDesc));
 popupAddInputDesc.addEventListener('input', () => isValid(popupAddInputDesc, popupAddDescError, popupAddSubBtn, popupAddInputName));
 // слушатели popup-photo
 popupPhoto.addEventListener('click', () => closeCard(popupPhoto, event));
 popupPhotoCloseBtn.addEventListener('click', () => closeCard(popupPhoto, event));
-// слушатель ESC
