@@ -7,6 +7,22 @@
   line-height: 15px;
   margin-left: 35px;
   position: absolute;
-  top: 195px;
+  top: 197px;
   display: none;
+  width: 358px;
+}
+
+@media (max-width: 900px) {
+  .popup-edit__desc-error {
+    width: 238px;
+    top: 208px;
+    margin-left: 95px;
+  }
+}
+
+@media (max-width: 600px) {
+  .popup-edit__desc-error {
+    margin-left: -120px;
+    left: 50%;
+  }
 }

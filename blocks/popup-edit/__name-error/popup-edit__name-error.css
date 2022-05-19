@@ -5,8 +5,24 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  margin-left: 35px;
+  margin: 0 auto 0 35px;
   position: absolute;
   top: 140px;
   display: none;
+  width: 358px;
+}
+
+@media (max-width: 900px) {
+  .popup-edit__name-error {
+    width: 238px;
+    top: 150px;
+    margin-left: 95px;
+  }
+}
+
+@media (max-width: 600px) {
+  .popup-edit__name-error {
+    margin-left: -120px;
+    left: 50%;
+  }
 }

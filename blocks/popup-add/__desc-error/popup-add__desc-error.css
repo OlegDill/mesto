@@ -9,4 +9,20 @@
   position: absolute;
   top: 195px;
   display: none;
+  width: 358px;
+}
+
+@media (max-width: 900px) {
+  .popup-add__desc-error {
+    width: 238px;
+    top: 208px;
+    margin-left: 95px;
+  }
+}
+
+@media (max-width: 600px) {
+  .popup-add__desc-error {
+    margin-left: -120px;
+    left: 50%;
+  }
 }
