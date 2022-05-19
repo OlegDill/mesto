@@ -101,9 +101,8 @@ function openPopup(popup, elementBtn, event, elementInputOne, errorOne, elementI
 };
 // функция закрытия popup
 function closePopup(popup, event, elementInputOne, errorOne, elementInputTwo, errorTwo) {
-  console.log('close')
-  if (event.target === event.currentTarget) {
-    console.log('close if')
+  console.log(event.target.classList.value)
+  if (event.target === event.currentTarget || event.target.classList.value === 'profile__edit-button') {
     popup.classList.remove('popup-hidden');
     popupOverflow();
     hideInputError(elementInputOne, errorOne);
@@ -111,7 +110,7 @@ function closePopup(popup, event, elementInputOne, errorOne, elementInputTwo, er
     document.removeEventListener('keydown', () => escPopup(event, elementInputOne, errorOne, elementInputTwo, errorTwo));
   }
 };
-// функция toogle вертикальной прокрутки
+// функция toogle вертикального скролла
 function popupOverflow() { 
   body.classList.toggle('body_overflow'); 
 };
@@ -162,10 +161,9 @@ const isValid = (elementInputOne, error, elementBtn, elementInputTwo) => {
 
 
 const escPopup = (evt, elementInputOne, errorOne, elementInputTwo, errorTwo) => {
-  console.log(event.key)
   if (event.key === 'Escape') {
-    console.log('esc')
     const popup = document.querySelector('.popup-hidden');
+    console.log(popup)
     closePopup(popup, evt, elementInputOne, errorOne, elementInputTwo, errorTwo);
   }
 };
