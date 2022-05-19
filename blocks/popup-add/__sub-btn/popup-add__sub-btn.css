@@ -19,7 +19,7 @@
   padding: 0;
 }
 
-.popup-add__sub-btn:hover {
+.popup-add__sub-btn:not([disabled]):hover {
   opacity: 0.8;
 }
 

@@ -47,7 +47,9 @@
         <form class="popup-edit__form" name="formEdit" novalidate>
           <h2 class="popup-edit__caption">Редактировать профиль</h2>
           <input type="text" class="popup-edit__input popup-edit__input_name" name="inputName" required maxlength="40" minlength="2">
+          <span class="popup-edit__name-error"></span>
           <input type="text" class="popup-edit__input popup-edit__input_desc" name="inputDesc" required maxlength="200" minlength="2">
+          <span class="popup-edit__desc-error"></span>
           <button type="submit" class="popup-edit__sub-btn">Сохранить</button>
           <button type="button" class="popup-edit__close-btn"></button>
         </form>
@@ -57,8 +59,10 @@
       <div class="popup-add__container">
         <form class="popup-add__form" name="formAdd">
           <h2 class="popup-add__caption">Новое место</h2>
-          <input type="text" class="popup-add__input popup-add__input_name" name="inputName" placeholder="Название">
-          <input type="url" class="popup-add__input popup-add__input_desc" name="inputDesc" placeholder="Ссылка на картинку">
+          <input type="text" class="popup-add__input popup-add__input_name" name="inputName" placeholder="Название" required maxlength="30" minlength="2">
+          <span class="popup-add__name-error"></span>
+          <input type="url" class="popup-add__input popup-add__input_desc" name="inputDesc" placeholder="Ссылка на картинку" required>
+          <span class="popup-add__desc-error"></span>
           <button type="submit" class="popup-add__sub-btn">Создать</button>
           <button type="button" class="popup-add__close-btn"></button>
         </form>

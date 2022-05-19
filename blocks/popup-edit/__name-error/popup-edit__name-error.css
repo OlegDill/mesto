@@ -1,0 +1,12 @@
+.popup-edit__name-error {
+  color: #FF0000;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  margin-left: 35px;
+  position: absolute;
+  top: 140px;
+  display: none;
+}
