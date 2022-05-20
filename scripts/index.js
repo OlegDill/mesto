@@ -124,24 +124,6 @@ function closePopup(popup) {
 function popupOverflow() { 
   body.classList.toggle('body_overflow');
 };
-// функция disable submit button
-function subBtnDisable(elementBtn) { 
-  elementBtn.setAttribute('disabled', true); 
-  elementBtn.classList.add('popup__button_disabled'); 
-};
-// функция enable submit button
-function subBtnEnable(elementBtn) { 
-  elementBtn.removeAttribute('disabled'); 
-  elementBtn.classList.remove('popup__button_disabled'); 
-};
-// функция проверки активности submit button
-function subBtnActive(elementInputOne, elementInputTwo, elementBtn) { 
-  if ((!elementInputOne.validity.valid) || (!elementInputTwo.validity.valid)) { 
-    subBtnDisable(elementBtn); 
-  } else {
-    subBtnEnable(elementBtn); 
-  }
-};
 // функция закрытия popup по кнопке Escape
 const pressEscapeKey = (evt) => {
   if (evt.key === 'Escape') {
