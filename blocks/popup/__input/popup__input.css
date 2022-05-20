@@ -1,4 +1,4 @@
-.popup-add__input {
+.popup__input {
   width: 358px;
   display: flex;
   font-family: 'Inter', ‘Arial’, sans-serif;
@@ -10,17 +10,16 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin: 0 auto 38px auto;
-
 }
 
 @media (max-width: 600px) {
-  .popup-add__input {
+  .popup__input {
     margin-bottom: 37px;
   }
 }
 
 @media (max-width: 900px) {
-  .popup-add__input {
+  .popup__input {
     width: 238px;
   }
 }

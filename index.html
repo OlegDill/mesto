@@ -42,36 +42,36 @@
         </div>
       </article>
     </template>
-    <div class="popup-edit">
+    <div class="popup popup-edit">
       <div class="popup-edit__container">
-        <form class="popup-edit__form" name="formEdit" novalidate>
+        <form class="popup__form popup-edit__form" name="formEdit" novalidate>
           <h2 class="popup-edit__caption">Редактировать профиль</h2>
-          <input type="text" class="popup-edit__input popup-edit__input_name" name="inputName" required maxlength="40" minlength="2">
+          <input type="text" class="popup__input popup-edit__input_name" name="inputName" required maxlength="40" minlength="2">
           <span class="popup-edit__name-error"></span>
-          <input type="text" class="popup-edit__input popup-edit__input_desc" name="inputDesc" required maxlength="200" minlength="2">
+          <input type="text" class="popup__input popup-edit__input_desc" name="inputDesc" required maxlength="200" minlength="2">
           <span class="popup-edit__desc-error"></span>
-          <button type="submit" class="popup-edit__sub-btn">Сохранить</button>
-          <button type="button" class="popup-edit__close-btn"></button>
+          <button type="submit" class="popup__sub-btn popup-edit__sub-btn">Сохранить</button>
+          <button type="button" class="popup__close popup-edit__close-btn"></button>
         </form>
       </div>
     </div>
-    <div class="popup-add">
+    <div class="popup popup-add">
       <div class="popup-add__container">
-        <form class="popup-add__form" name="formAdd">
+        <form class="popup__form popup-add__form" name="formAdd">
           <h2 class="popup-add__caption">Новое место</h2>
-          <input type="text" class="popup-add__input popup-add__input_name" name="inputName" placeholder="Название" required maxlength="30" minlength="2">
+          <input type="text" class="popup__input popup-add__input_name" name="inputName" placeholder="Название" required maxlength="30" minlength="2">
           <span class="popup-add__name-error"></span>
-          <input type="url" class="popup-add__input popup-add__input_desc" name="inputDesc" placeholder="Ссылка на картинку" required>
+          <input type="url" class="popup__input popup-add__input_desc" name="inputDesc" placeholder="Ссылка на картинку" required>
           <span class="popup-add__desc-error"></span>
-          <button type="submit" class="popup-add__sub-btn">Создать</button>
-          <button type="button" class="popup-add__close-btn"></button>
+          <button type="submit" class="popup__sub-btn popup-add__sub-btn">Создать</button>
+          <button type="button" class="popup__close popup-add__close-btn"></button>
         </form>
       </div>
     </div>
-    <div class="popup-photo">
+    <div class="popup popup-photo">
       <div class="popup-photo__container">
-        <form class="popup-photo__form" name="formPhoto">
-          <button type="button" class="popup-photo__close-btn"></button>
+        <form class="popup__form popup-photo__form" name="formPhoto">
+          <button type="button" class="popup__close popup-photo__close-btn"></button>
           <img class="popup-photo__image" alt="фото места">
           <h3 class="popup-photo__subtitle"></h3>
         </form>

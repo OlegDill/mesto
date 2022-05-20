@@ -36,7 +36,6 @@
 @import url(../blocks/popup-edit/__close-btn/popup-edit__close-btn.css);
 @import url(../blocks/popup-edit/__container/popup-edit__container.css);
 @import url(../blocks/popup-edit/__form/popup-edit__form.css);
-@import url(../blocks/popup-edit/__input/popup-edit__input.css);
 @import url(../blocks/popup-edit/__sub-btn/popup-edit__sub-btn.css);
 @import url(../blocks/popup-edit/__name-error/popup-edit__name-error.css);
 @import url(../blocks/popup-edit/__desc-error/popup-edit__desc-error.css);
@@ -46,7 +45,6 @@
 @import url(../blocks/popup-add/__close-btn/popup-add__close-btn.css);
 @import url(../blocks/popup-add/__container/popup-add__container.css);
 @import url(../blocks/popup-add/__form/popup-add__form.css);
-@import url(../blocks/popup-add/__input/popup-add__input.css);
 @import url(../blocks/popup-add/__sub-btn/popup-add__sub-btn.css);
 @import url(../blocks/popup-add/__name-error/popup-add__name-error.css);
 @import url(../blocks/popup-add/__desc-error/popup-add__desc-error.css);
@@ -61,7 +59,9 @@
 @import url(../blocks/popup-hidden/popup-hidden.css);
 /* input-error */
 @import url(../blocks/input-error/input-error.css);
-/* btn-disable */
-@import url(../blocks/btn-disable/btn-disable.css);
 /* error-hidden */
 @import url(../blocks/error-hidden/error-hidden.css);
+/* popup */
+@import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__button/_disabled/popup__button_disabled.css);
+@import url(../blocks/popup/__input/_type-error/popup__input_type-error.css);

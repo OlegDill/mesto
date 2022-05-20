@@ -32,12 +32,13 @@ const getItemElement = (title, photo) => {
   const newItemTitle = newItemElement.querySelector('.element__title');
   newItemTitle.textContent = title;
   newItemPhoto.src = photo;
+  newItemPhoto.alt = 'Фото ' + title;
   const elementButtonLike = newItemElement.querySelector('.element__like');
   const elementButtonDelete = newItemElement.querySelector('.element__delete');
   const elementPhoto = newItemElement.querySelector('.element__photo');
-  elementButtonLike.addEventListener('click', likeCard);
-  elementButtonDelete.addEventListener('click', deleteCard);
-  elementPhoto.addEventListener('click', openCard);
+  elementButtonLike.addEventListener('mousedown', likeCard);
+  elementButtonDelete.addEventListener('mousedown', deleteCard);
+  elementPhoto.addEventListener('mousedown', openCard);
   return newItemElement;
 };
 // функция добавления карточек
@@ -49,25 +50,24 @@ initialCards.forEach((title) => {
   renderItem(elementNew, title.name, title.link)
 });
 // функция открытия popup-edit
-function popupEditOpen() {
+function openPopupEdit() {
   popupEditInputName.value = profileTitle.textContent;
   popupEditInputDesc.value = profileSubtitle.textContent;
   openPopup(popupEdit, popupEditSubBtn, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError);
   // isValid();
 };
 // функция сохранения данных с popup-edit
-function formEditSubmitHandler (popup, evt, InputOne, errorOne, InputTwo, errorTwo) {
+function handlerFormEditSubmit(popup, evt, InputOne, errorOne, InputTwo, errorTwo) {
   evt.preventDefault();
   profileTitle.textContent = popupEditInputName.value;
   profileSubtitle.textContent = popupEditInputDesc.value;
   closePopup(popup, evt, InputOne, errorOne, InputTwo, errorTwo);
 };
 // функция добавление карточки 
-function formAddSubmitHandler(popup, evt, InputOne, errorOne, InputTwo, errorTwo) {
+function handlerFormAddSubmit(popup, evt, InputOne, errorOne, InputTwo, errorTwo) {
   evt.preventDefault();
   renderItem(elementNew, popupAddInputName.value, popupAddInputDesc.value)
-  popupAddInputDesc.value = '';
-  popupAddInputName.value = '';
+  evt.target.reset();
   closePopup(popup, evt, InputOne, errorOne, InputTwo, errorTwo);
 };
 // функция лайков карточкам
@@ -113,17 +113,17 @@ function closePopup(popup, event, elementInputOne, errorOne, elementInputTwo, er
 };
 // функция toogle вертикального скролла
 function popupOverflow() { 
-  body.classList.toggle('body_overflow'); 
+  body.classList.toggle('body_overflow');
 };
 // функция disable submit button
 function subBtnDisable(elementBtn) { 
   elementBtn.setAttribute('disabled', true); 
-  elementBtn.classList.add('btn-disable'); 
+  elementBtn.classList.add('popup__button_disabled'); 
 };
 // функция enable submit button
 function subBtnEnable(elementBtn) { 
   elementBtn.removeAttribute('disabled'); 
-  elementBtn.classList.remove('btn-disable'); 
+  elementBtn.classList.remove('popup__button_disabled'); 
 };
 // функция активности submit button
 function subBtnActive(elementInputOne, elementInputTwo, elementBtn) { 
@@ -149,19 +149,19 @@ const escPopup = (evt) => {
   }
 };
 // слушатели popup-edit
-popupEdit.addEventListener('click', () => closePopup(popupEdit, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError));
-profileButtonEdit.addEventListener('click', popupEditOpen);
-popupEditButtonClose.addEventListener('click', () => closePopup(popupEdit, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError));
-popupEditForm.addEventListener('submit', () => formEditSubmitHandler(popupEdit, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError));
+popupEdit.addEventListener('mousedown', () => closePopup(popupEdit, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError));
+profileButtonEdit.addEventListener('mousedown', openPopupEdit);
+popupEditButtonClose.addEventListener('mousedown', () => closePopup(popupEdit, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError));
+popupEditForm.addEventListener('submit', () => handlerFormEditSubmit(popupEdit, event, popupEditInputName, popupEditNameError, popupEditInputDesc, popupEditDescError));
 popupEditInputName.addEventListener('input', () => isValid(popupEditInputName, popupEditNameError, popupEditSubBtn, popupEditInputDesc));
 popupEditInputDesc.addEventListener('input', () => isValid(popupEditInputDesc, popupEditDescError, popupEditSubBtn, popupEditInputName));
 // слушатели popup-add
-popupAdd.addEventListener('click', () => closePopup(popupAdd, event, popupAddInputName, popupAddNameError, popupAddInputDesc, popupAddDescError));
-buttonAdd.addEventListener('click', () => openPopup(popupAdd, popupAddSubBtn));
-popupAddButtonClose.addEventListener('click', () => closePopup(popupAdd, event, popupAddInputName, popupAddNameError, popupAddInputDesc, popupAddDescError));
-popupAddForm.addEventListener('submit', () => formAddSubmitHandler(popupAdd, event, popupAddInputName, popupAddNameError, popupAddInputDesc, popupAddDescError));
+popupAdd.addEventListener('mousedown', () => closePopup(popupAdd, event, popupAddInputName, popupAddNameError, popupAddInputDesc, popupAddDescError));
+buttonAdd.addEventListener('mousedown', () => openPopup(popupAdd, popupAddSubBtn));
+popupAddButtonClose.addEventListener('mousedown', () => closePopup(popupAdd, event, popupAddInputName, popupAddNameError, popupAddInputDesc, popupAddDescError));
+popupAddForm.addEventListener('submit', () => handlerFormAddSubmit(popupAdd, event, popupAddInputName, popupAddNameError, popupAddInputDesc, popupAddDescError));
 popupAddInputName.addEventListener('input', () => isValid(popupAddInputName, popupAddNameError, popupAddSubBtn, popupAddInputDesc));
 popupAddInputDesc.addEventListener('input', () => isValid(popupAddInputDesc, popupAddDescError, popupAddSubBtn, popupAddInputName));
 // слушатели popup-photo
-popupPhoto.addEventListener('click', () => closeCard(popupPhoto, event));
-popupPhotoCloseBtn.addEventListener('click', () => closeCard(popupPhoto, event));
+popupPhoto.addEventListener('mousedown', () => closeCard(popupPhoto, event));
+popupPhotoCloseBtn.addEventListener('mousedown', () => closeCard(popupPhoto, event));
