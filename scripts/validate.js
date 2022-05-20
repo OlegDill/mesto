@@ -19,6 +19,14 @@ const hideInputError = (elementInput, error) => {
   error.textContent = '';
   error.classList.remove('popup__error_visible', true);
 };
+// функция проверки активности submit button
+function subBtnActive(elementInputOne, elementInputTwo, elementBtn) { 
+  if ((!elementInputOne.validity.valid) || (!elementInputTwo.validity.valid)) { 
+    subBtnDisable(elementBtn); 
+  } else {
+    subBtnEnable(elementBtn); 
+  }
+};
 // функция disable submit button
 function subBtnDisable(elementBtn) { 
   elementBtn.setAttribute('disabled', true); 
@@ -29,14 +37,7 @@ function subBtnEnable(elementBtn) {
   elementBtn.removeAttribute('disabled'); 
   elementBtn.classList.remove('popup__button_disabled'); 
 };
-// функция проверки активности submit button
-function subBtnActive(elementInputOne, elementInputTwo, elementBtn) { 
-  if ((!elementInputOne.validity.valid) || (!elementInputTwo.validity.valid)) { 
-    subBtnDisable(elementBtn); 
-  } else {
-    subBtnEnable(elementBtn); 
-  }
-};
+
 
 
 
