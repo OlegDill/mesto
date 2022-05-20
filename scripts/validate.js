@@ -2,9 +2,9 @@
 //   formSelector: '.popup__form',
 //   inputSelector: '.popup__input',
 //   submitButtonSelector: '.popup__sub-btn',
-//   inactiveButtonClass: 'popup__button_disabled',
-//   inputErrorClass: 'popup__input_type-error',
-//   errorClass: 'popup__error_visible'
+//   inactiveButtonClass: '.popup__button_disabled',
+//   inputErrorClass: '.popup__input_type-error',
+//   errorClass: '.popup__error_visible'
 // });
 // Функция проверки валидности поля
 const isValid = (elementInputOne, error, elementBtn, elementInputTwo) => {
@@ -19,11 +19,11 @@ const isValid = (elementInputOne, error, elementBtn, elementInputTwo) => {
 const showInputError = (elementInput, error) => {
   elementInput.classList.add('popup__input_type-error');
   error.textContent = elementInput.validationMessage;
-  error.classList.add('error-hidden');
+  error.classList.add('popup__error_visible');
 };
 // Функция удаления ошибки валидности
 const hideInputError = (elementInput, error) => {
   elementInput.classList.remove('popup__input_type-error');
   error.textContent = '';
-  error.classList.remove('error-hidden', true);
+  error.classList.remove('popup__error_visible', true);
 };
