@@ -36,7 +36,7 @@ popups.forEach((popup) => {
         closePopup(popup)
       }
   })
-})
+});
 // функция создания новой карточки
 const getItemElement = (title, photo) => {
   const newItemElement = template.content.cloneNode(true);
@@ -106,7 +106,7 @@ function closeCard(popup, event) {
     popupOverflow();
     document.removeEventListener('keydown', pressEscapeKey);
   }
-}
+};
 // функция открытия popup
 function openPopup(popup, elementBtn) {
   popup.classList.add('popup_opened', true);
@@ -134,7 +134,7 @@ function subBtnEnable(elementBtn) {
   elementBtn.removeAttribute('disabled'); 
   elementBtn.classList.remove('popup__button_disabled'); 
 };
-// функция активности submit button
+// функция проверки активности submit button
 function subBtnActive(elementInputOne, elementInputTwo, elementBtn) { 
   if ((!elementInputOne.validity.valid) || (!elementInputTwo.validity.valid)) { 
     subBtnDisable(elementBtn); 

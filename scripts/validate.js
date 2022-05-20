@@ -4,8 +4,9 @@
 //   submitButtonSelector: '.popup__sub-btn',
 //   inactiveButtonClass: '.popup__button_disabled',
 //   inputErrorClass: '.popup__input_type-error',
-//   errorClass: '.popup__error_visible'
+//   errorClass: '.popup__error'
 // });
+
 // Функция проверки валидности поля
 const isValid = (elementInputOne, error, elementBtn, elementInputTwo) => {
   subBtnActive(elementInputOne, elementInputTwo, elementBtn);
