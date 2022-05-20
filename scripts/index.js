@@ -81,34 +81,34 @@ function deleteCard(evt) {
 // функция открытия popup-photo
 function openCard(evt) {
   popupPhotoImage.src = evt.target.closest('.element__photo').src;
-  popupPhotoSubtitle.textContent = evt.target.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.textContent;
-  popupPhoto.classList.add('popup-hidden', true);
+  popupPhotoSubtitle.textContent = evt.target.closest('.element').querySelector('.element__title').textContent;
+  popupPhoto.classList.add('popup_opened', true);
   popupOverflow();
-  document.addEventListener('keydown', escPopup);
+  document.addEventListener('keydown', pressEscapeKey);
 };
 // функция закрытия popup-photo
 function closeCard(popup, event) {
   if (event.target === event.currentTarget || event.key === 'Escape') {
-    popup.classList.remove('popup-hidden');
+    popup.classList.remove('popup_opened');
     popupOverflow();
-    document.removeEventListener('keydown', escPopup);
+    document.removeEventListener('keydown', pressEscapeKey);
   }
 }
 // функция открытия popup
 function openPopup(popup, elementBtn, event, elementInputOne, errorOne, elementInputTwo, errorTwo) {
-  popup.classList.add('popup-hidden', true);
+  popup.classList.add('popup_opened', true);
   popupOverflow();
   subBtnDisable(elementBtn);
-  document.addEventListener('keydown', escPopup);
+  document.addEventListener('keydown', pressEscapeKey);
 };
 // функция закрытия popup
 function closePopup(popup, event, elementInputOne, errorOne, elementInputTwo, errorTwo) {
   if (event.target === event.currentTarget || event.key === 'Escape') {
-    popup.classList.remove('popup-hidden');
+    popup.classList.remove('popup_opened');
     popupOverflow();
     hideInputError(elementInputOne, errorOne);
     hideInputError(elementInputTwo, errorTwo);
-    document.removeEventListener('keydown', escPopup);
+    document.removeEventListener('keydown', pressEscapeKey);
   }
 };
 // функция toogle вертикального скролла
@@ -134,17 +134,17 @@ function subBtnActive(elementInputOne, elementInputTwo, elementBtn) {
   }
 };
 // функция закрытия popup по кнопке Escape
-const escPopup = (evt) => {
+const pressEscapeKey = (evt) => {
   if (evt.key === 'Escape') {
-    const popup = document.querySelector('.popup-hidden');
-    if (popup.classList.value === 'popup-edit popup-hidden true' || popup.classList.value === 'popup-add popup-hidden true' || popup.classList.value === 'popup-edit true popup-hidden' || popup.classList.value === 'popup-add true popup-hidden') {
+    const openedPopup = document.querySelector('.popup_opened');
+    if (popup.classList.value === 'popup-edit popup_opened true' || popup.classList.value === 'popup-add popup_opened true' || popup.classList.value === 'popup-edit true popup_opened' || popup.classList.value === 'popup-add true popup_opened') {
       const elOne = popup.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling;
       const errOne = popup.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
       const elTwo = popup.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
       const errTwo = popup.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
-      closePopup(popup, evt, elOne, errOne, elTwo, errTwo);
+      closePopup(openedPopup, evt, elOne, errOne, elTwo, errTwo);
     } else {
-      closeCard(popup, event);
+      closeCard(openedPopup, event);
     }
   }
 };

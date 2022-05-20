@@ -1,4 +1,4 @@
-.popup-hidden {
+.popup_opened {
   opacity: 1;
   z-index: 999;
 }
