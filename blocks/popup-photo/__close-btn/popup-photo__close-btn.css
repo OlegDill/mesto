@@ -10,10 +10,12 @@
   transition: opacity .5s;
   cursor: pointer;
   background-image: url(../../../images/Close-Icon_32px.svg);
+  transition: transform .5s ease-in-out;
 }
 
 .popup-photo__close-btn:hover {
   opacity: 0.6;
+  transform: rotate(180deg);
 }
 
 @media (max-width: 600px) {

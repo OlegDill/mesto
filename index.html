@@ -46,24 +46,24 @@
       <div class="popup-edit__container">
         <form class="popup__form popup-edit__form" name="formEdit" novalidate>
           <h2 class="popup-edit__caption">Редактировать профиль</h2>
-          <input type="text" class="popup__input popup-edit__input_name" name="inputName" required maxlength="40" minlength="2">
+          <input id="popup-edit__name" type="text" class="popup__input popup-edit__input_name" name="inputName" required maxlength="40" minlength="2">
           <span class="popup__error popup-edit__name-error"></span>
-          <input type="text" class="popup__input popup-edit__input_desc" name="inputDesc" required maxlength="200" minlength="2">
+          <input id="popup-edit__desc" type="text" class="popup__input popup-edit__input_desc" name="inputDesc" required maxlength="200" minlength="2">
           <span class="popup__error popup-edit__desc-error"></span>
-          <button type="submit" class="popup__sub-btn popup-edit__sub-btn">Сохранить</button>
+          <button type="submit" class="popup__sub-btn popup-edit__sub-btn popup__button_disabled" disabled="true">Сохранить</button>
           <button type="button" class="popup__close popup-edit__close-btn"></button>
         </form>
       </div>
     </div>
     <div class="popup popup-add">
       <div class="popup-add__container">
-        <form class="popup__form popup-add__form" name="formAdd">
+        <form class="popup__form popup-add__form" name="formAdd" novalidate>
           <h2 class="popup-add__caption">Новое место</h2>
-          <input type="text" class="popup__input popup-add__input_name" name="inputName" placeholder="Название" required maxlength="30" minlength="2">
+          <input id="popup-add__name" type="text" class="popup__input popup-add__input_name" name="inputName" placeholder="Название" required maxlength="30" minlength="2">
           <span class="popup__error popup-add__name-error"></span>
-          <input type="url" class="popup__input popup-add__input_desc" name="inputDesc" placeholder="Ссылка на картинку" required>
+          <input id="popup-add__desc" type="url" class="popup__input popup-add__input_desc" name="inputDesc" placeholder="Ссылка на картинку" required>
           <span class="popup__error popup-add__desc-error"></span>
-          <button type="submit" class="popup__sub-btn popup-add__sub-btn">Создать</button>
+          <button type="submit" class="popup__sub-btn popup-add__sub-btn popup__button_disabled" disabled="true">Создать</button>
           <button type="button" class="popup__close popup-add__close-btn"></button>
         </form>
       </div>
