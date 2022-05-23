@@ -7,10 +7,10 @@
   background: none;
   padding: 0;
   border: none;
-  transition: opacity .5s;
+  transition: opacity .5s, transform .5s ease-in-out;
   cursor: pointer;
   background-image: url(../../../images/Close-Icon_32px.svg);
-  transition: transform .5s ease-in-out;
+
 }
 
 .popup-add__close-btn:hover {
