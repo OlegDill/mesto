@@ -19,7 +19,7 @@ const hideInputError = (formElement, inputElement, inputErrorModifier, errorSele
   inputElement.classList.remove(inputErrorModifier);
   errorElement.classList.remove(errorSelector);
   errorElement.textContent = '';
-}; 
+};
 
 const checkInputValidity = (formElement, inputElement, inputErrorModifier, errorSelector) => {
   if (!inputElement.validity.valid) {
@@ -61,7 +61,7 @@ const setEventListeners = (formElement, validConfig) => {
       toogleButtonState(inputList, saveButton, inactiveButtonClass);
     });
   });
-}; 
+};
 
 const enableValidation = (validConfig) => {
   const {formSelector} = validConfig;
