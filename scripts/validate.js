@@ -69,11 +69,6 @@ const enableValidation = (validConfig) => {
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
-      if (formElement.name === 'formEdit') {
-        handlerFormEditSubmit()
-      } else if (formElement.name === 'formAdd') {
-        handlerFormAddSubmit()
-      }
     });
     setEventListeners(formElement, validConfig);
   });

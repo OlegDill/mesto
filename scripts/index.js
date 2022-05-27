@@ -1,11 +1,14 @@
 const profileButtonEdit = document.querySelector('.profile__edit-button');
 const popupEdit = document.querySelector('.popup-edit');
+const popupEditForm = document.querySelector('.popup-edit__form');
 const popupEditInputName = document.querySelector('.popup-edit__input-name');
 const popupEditInputDesc = document.querySelector('.popup-edit__input-desc');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const buttonAdd = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('.popup-add');
+const popupAddForm = document.querySelector('.popup-add__form');
+const popupAddSubBtn = document.querySelector('.popup-add__sub-btn');
 const elementNew = document.querySelector('.elements');
 const popupAddInputName = document.querySelector('.popup-add__input-name');
 const popupAddInputDesc = document.querySelector('.popup-add__input-desc');
@@ -36,10 +39,9 @@ const getItemElement = (title, photo) => {
   newItemPhoto.alt = 'Фото ' + title;
   const elementButtonLike = newItemElement.querySelector('.element__like');
   const elementButtonDelete = newItemElement.querySelector('.element__delete');
-  const elementPhoto = newItemElement.querySelector('.element__photo');
-  elementButtonLike.addEventListener('mousedown', likeCard);
-  elementButtonDelete.addEventListener('mousedown', deleteCard);
-  elementPhoto.addEventListener('mousedown', () => openCard(title, photo));
+  elementButtonLike.addEventListener('click', likeCard);
+  elementButtonDelete.addEventListener('click', deleteCard);
+  newItemPhoto.addEventListener('click', () => openCard(title, photo));
   return newItemElement;
 };
 // функция добавления карточек
@@ -57,16 +59,18 @@ function openPopupEdit() {
   openPopup(popupEdit);
 };
 // функция сохранения данных с popup-edit
-function handlerFormEditSubmit() {
+function handleFormEditSubmit() {
   profileTitle.textContent = popupEditInputName.value;
   profileSubtitle.textContent = popupEditInputDesc.value;
   closePopup();
 };
 // функция добавление карточки 
-function handlerFormAddSubmit() {
+function handleFormAddSubmit(event) {
   renderItem(elementNew, popupAddInputName.value, popupAddInputDesc.value)
   event.target.reset();
   closePopup();
+  popupAddSubBtn.disabled = true; 
+  popupAddSubBtn.classList.add('popup__sub-btn_disabled');   
 };
 // функция лайков карточкам
 function likeCard(evt) { 
@@ -106,5 +110,7 @@ const pressEscapeKey = (evt) => {
   }
 };
 // слушатели
-profileButtonEdit.addEventListener('mousedown', openPopupEdit);
-buttonAdd.addEventListener('mousedown', () => openPopup(popupAdd));
+profileButtonEdit.addEventListener('click', openPopupEdit);
+buttonAdd.addEventListener('click', () => openPopup(popupAdd));
+popupEditForm.addEventListener('submit', handleFormEditSubmit);
+popupAddForm.addEventListener('submit', handleFormAddSubmit);
