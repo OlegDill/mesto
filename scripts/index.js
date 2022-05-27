@@ -83,24 +83,25 @@ function deleteCard(evt) {
 // функция открытия popup-photo
 function openCard(title, photo) {
   popupPhotoImage.src = photo;
+  popupPhotoImage.alt = 'Фото ' + title;
   popupPhotoSubtitle.textContent = title;
   openPopup(popupPhoto);
 };
 // функция открытия popup
 function openPopup(popup) {
   popup.classList.add('popup_opened', true);
-  popupOverflow();
+  togglePopupOverflow();
   document.addEventListener('keydown', pressEscapeKey);
 };
 // функция закрытия popup
 function closePopup() {
   const openedPopup = document.querySelector('.popup_opened');
   openedPopup.classList.remove('popup_opened');
-  popupOverflow();
+  togglePopupOverflow();
   document.removeEventListener('keydown', pressEscapeKey);
 };
 // функция toogle вертикального скролла
-function popupOverflow() { 
+function togglePopupOverflow() { 
   body.classList.toggle('body_overflow');
 };
 // функция закрытия popup по кнопке Escape
