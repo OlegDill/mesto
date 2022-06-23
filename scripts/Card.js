@@ -8,7 +8,7 @@ export class Card {
   }
 
   _getTemplate() {
-    const cardElement = document.querySelector('.temp').content.cloneNode(true);;
+    const cardElement = document.querySelector(this._cardSelector).content.cloneNode(true);
     return cardElement;
   }
 
@@ -20,6 +20,7 @@ export class Card {
     this._image.src = this._link;
     this._image.alt = `Фото ${this._link}`;
     this._element.querySelector('.element__title').textContent = this._name;
+    
     return this._element;
   }
 
