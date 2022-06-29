@@ -1,6 +1,9 @@
-import { Card } from "../scripts/Card.js";
-import { FormValidator } from "../scripts/FormValidator.js";
-import { initialCards } from "../scripts/cards.js"
+import './pages/index.css';
+
+import { Card } from "./scripts/Card.js";
+import { FormValidator } from "./scripts/FormValidator.js";
+import { initialCards } from "./scripts/cards.js"
+
 
 // // теперь картинки можно импортировать,
 // // вебпак добавит в переменные правильные пути
