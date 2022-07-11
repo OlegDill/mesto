@@ -24,3 +24,46 @@ export const initialCards = [
     link: 'https://i.yapx.ru/R2zrO.png'
   }
 ];
+
+export const profileButtonEdit = document.querySelector('.profile__edit-button');
+export const buttonAdd = document.querySelector('.profile__add-button');
+export const cardSelector = document.getElementById('temp').content.querySelector('.element');
+
+export const validConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__sub-btn',
+  inactiveButtonClass: 'popup__sub-btn_disabled',
+  inputErrorClass: 'popup__input_type-error',
+  errorClass: 'popup__error_visible'
+};
+
+export const formValidators = {};
+
+export const formConfiguration = {
+  inputSelector: 'popup__input',
+  submitBtnSelector: 'popup__sub-btn',
+  formSelector: 'popup__form',
+}
+
+export const popupConfiguration = {
+  activeModifier: 'popup_opened',
+  closeBtnSelector: 'popup__close',
+}
+
+export const profileConfiguration = {
+  titleSelector: 'profile__title',
+  jobSelector: 'profile__subtitle',
+}
+
+export const viewPopupConfiguration = {
+  imageSelector: 'popup-photo__image',
+  captionSelector: 'popup-photo__subtitle',
+}
+
+export const cardsContainerSelector = 'elements';
+export const newPlacePopupSelector = 'popup-add';
+export const profilePopupSelector = 'popup-edit';
+export const imagePopupSelector = 'popup-photo';
+export const newPlaceFormName = 'profile-photo_form';
+export const profileFormName = 'profile-edit_form';

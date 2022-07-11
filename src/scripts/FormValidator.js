@@ -56,7 +56,7 @@ export class FormValidator {
       });
     });
   };
-  
+
   deleteError() {
     this._inputList.forEach(inputElement => {
       this._hideInputError(inputElement);
