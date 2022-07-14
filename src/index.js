@@ -30,7 +30,6 @@ export const popupPhoto = document.querySelector('.popup-photo');
 export const popupPhotoImage = document.querySelector('.popup-photo__image');
 export const popupPhotoSubtitle = document.querySelector('.popup-photo__subtitle');
 
-
 Array.from(document.forms).forEach(formElement => {
   formValidators[formElement.name] = new FormValidator(validConfig, formElement);
   formValidators[formElement.name].enableValidation();

@@ -27,7 +27,7 @@ export const initialCards = [
 
 export const profileButtonEdit = document.querySelector('.profile__edit-button');
 export const buttonAdd = document.querySelector('.profile__add-button');
-export const cardSelector = document.getElementById('temp').content.querySelector('.element');
+export const cardSelector = document.querySelector('.element');
 
 export const validConfig = {
   formSelector: '.popup__form',
